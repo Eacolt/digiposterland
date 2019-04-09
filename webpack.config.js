@@ -22,6 +22,7 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			React: 'react',
 			ReactDOM: 'react-dom',
+			Echarts:'echarts',
 			D3:'d3'
 		}),
 		new HtmlWebpackPlugin({
@@ -91,7 +92,7 @@ module.exports = {
 	devServer: {
 		host: 'localhost',
 		contentBase:'./dist',
-		port: 8080,
+		port: 8081,
 		open: true,
 		hot: true
 	}
