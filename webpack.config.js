@@ -23,7 +23,8 @@ module.exports = {
 			React: 'react',
 			ReactDOM: 'react-dom',
 			Echarts:'echarts',
-			D3:'d3'
+			D3:'d3',
+			gsap:'gsap'
 		}),
 		new HtmlWebpackPlugin({
 			title: 'icourse',

@@ -48,7 +48,7 @@ class EchartDemo1 extends React.Component{
     }
     render(){
         return(
-            <div ref="demo" style={{width:'600px',height:'400px',display:this.props.shown===true?'block':'block'}}>
+            <div ref="demo" style={{display:'flex', width:'600px',height:'400px',display:this.props.shown===true?'block':'block'}}>
             </div>
         )
     }

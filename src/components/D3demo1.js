@@ -31,10 +31,10 @@ class D3demo1 extends React.Component{
             });
             console.log(myrect)
          //let tr = D3.select(svgdemo)
-         myrect.each(function(d,i,nodes){
-             D3.select(nodes[i].parentNode).append('text').text('haha')
-             .attr('x',)
-         });
+        //  myrect.each(function(d,i,nodes){
+        //      D3.select(nodes[i].parentNode).append('text').text('haha')
+        //      .attr('x',)
+        //  });
 
          let scaleOrdinal = D3.scaleOrdinal()
                             .domain([0,1,2,3,4,5])
@@ -57,21 +57,36 @@ class D3demo1 extends React.Component{
         
             .call(yAxis);
                     
-                    
+                    this.createAnime();
          
                 // .selectAll('tr')
                 // .data([1,2,3,4])
                 // .enter()
                 // .append('tr')
     }
+    createAnime(){
+        let svgdom = D3.select(this.refs.svgani).append('svg').attr('width',300).attr('height',300)
+        .attr('class','svgAnimeContainer');
+        let gCircle = svgdom.append('circle').attr('r',30)
+                      .attr('class','MyCircle')
+                    
+                      console.log(gCircle._groups[0][0],'gCircle')
+
+        
+             
+
+    }
     render(){
         return (
- 
-            <div ref='svgdemo' className='lala'>
+        <div style={{display:'flex'}}>
+        <div ref='svgdemo' className='lala'>
 
 
 
-            </div>
+        </div>
+        <div ref='svgani'></div>
+        </div>
+           
         )
      
     }

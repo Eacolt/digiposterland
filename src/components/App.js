@@ -20,7 +20,7 @@ class App extends React.Component {
 	}
 	render() {
 		return (
-			<div>
+			<div style={{display:'flex',flexWrap:'wrap'}}>
 				<D3demo1 style={{ display: 'none' }} />
 				<EchartDemo1 shown={this.state.showme} />
 			</div>

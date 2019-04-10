@@ -13,3 +13,10 @@ html,body{
 	fill:blue;
 
 }
+.MyCircle{
+	fill:red;
+}
+.svgAnimeContainer{
+	position: relative;
+	
+}
