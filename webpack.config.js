@@ -48,21 +48,38 @@ module.exports = {
 		},
 		{from:'./assets/sound',to:'public/sound'}]),
 		new MiniCssExtractPlugin({
-			filename: 'public/assets/css/[name].bundle.css'
+			filename: 'public/css/[name].bundle.css'
 		})
 
 	],
 	module: {
 		rules: [
+			{
+				test:/\.(jpg|png|gif|jpeg)$/,
+				use:[
+					{
+						loader:'file-loader',
+			 
+						options:{
+					 
+							name:'[name].[ext]',
+							// publicPath:'../img/',
+						    outputPath:'public/img'
+						}
+					}
+				]
+			},
 
 			{
 				test: /\.css$/,
 			 
 				use: [{
-					loader: MiniCssExtractPlugin.loader,
-					// 						options:{
-					// 							publicPath:assetsPath('./')
-					// 						}
+					loader:MiniCssExtractPlugin.loader,
+						options:{
+							publicPath:'../../'
+
+						}
+					 
 				}, 'css-loader']
 			},
 			{
