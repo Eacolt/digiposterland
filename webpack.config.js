@@ -4,6 +4,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
+const baseConfig = {
+	useHash:true
+}
 const assetsPath = function(_path) {
 	return path.posix.join('public', _path)
 }
@@ -11,7 +14,7 @@ module.exports = {
 	entry: './src/main.js',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: 'public/js/[name].bundle.js'
+		filename: baseConfig.useHash ? 'public/js/[hash].bundle.js' : 'public/js/[name].bundle.js'
 	},
 
 	plugins: [
@@ -48,7 +51,7 @@ module.exports = {
 		},
 		{from:'./assets/sound',to:'public/sound'}]),
 		new MiniCssExtractPlugin({
-			filename: 'public/css/[name].bundle.css'
+			filename: baseConfig.useHash ? 'public/css/[hash].bundle.css' : 'public/css/[name].bundle.css'
 		})
 
 	],
@@ -62,7 +65,7 @@ module.exports = {
 			 
 						options:{
 					 
-							name:'[name].[ext]',
+							name: baseConfig.useHash ? '[hash].[ext]' : '[name].[ext]',
 							// publicPath:'../img/',
 						    outputPath:'public/img'
 						}
