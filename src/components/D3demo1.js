@@ -2,6 +2,7 @@ class D3demo1 extends React.Component{
     svgdom;
     xScale;
     yScale;
+    gxAxios;
 
     constructor(props){
         super(props)
@@ -112,28 +113,29 @@ class D3demo1 extends React.Component{
       return cc;
     }
     createDigi(_datas,_var){
-     
-  
+
         var self= this;
-    
+        let xScale = _var.xScale,yScale = _var.yScale,
+        yAxis = D3.axisLeft(yScale),
+        xAxis = D3.axisBottom(xScale),
        
-        let gRect = this.svgdom.select('g');
+         gyAxios = this.svgdom.append('g').attr('transform','translate(100,80)');
+         self.gxAxios = this.svgdom.append('g').attr('transform',`translate(100,${this.state.svgHeight-20})`);
+
+   
+         xScale.domain(D3.range(0,_datas.length))
+         xScale.range([0,250]);
+ 
+    
 
   
-       let chartData = _datas;
-         let xScale = _var.xScale;
-         xScale.domain(D3.range(0,chartData.length))
-         xScale.range([0,250])
-
-    
-
-        let xAxis = D3.axisBottom(xScale);
-        gRect.call(xAxis);
+         self.gxAxios.call(xAxis);
+        gyAxios.call(yAxis)
  
 
                   _var.yScale.domain([0,100])
                   let rects = this.svgdom.selectAll('.MyRect')
-                                .data(chartData)
+                                .data(_datas)
                                 .enter()
                                 .append('rect');
                             
@@ -149,7 +151,7 @@ class D3demo1 extends React.Component{
                                     return xScale.bandwidth()-4;
                                 });
  
-                
+                  
                     return rects;
                            
                              
@@ -161,13 +163,39 @@ class D3demo1 extends React.Component{
 
   
        if(this.svgdom){
-  
-        this.svgdom.selectAll('.MyRect').data(datas).each((d,i,nodes)=>{
+
+
+           let svgData = this.svgdom.selectAll('.MyRect').data(datas);
+
+           self.xAxis = D3.axisBottom(self.xScale);
+           self.gxAxios.call(self.xAxis);
+           self.xScale.domain(D3.range(0,datas.length))
+           self.xScale.range([0,250]);
+      
+           svgData.enter().append('rect').attr('class','MyRect')
+        .attr('transform','translate(103,30)')
+        .attr('x',function(d,i){
+            console.log(i,self.xScale(i),',,,,',self.xScale(i-3))
+            return self.xScale(i);
+        })
+        .attr('y',function(d,i){
+            return  self.state.svgWidth - 150 - self.yScale(d)
+        })
+        .attr('width',function(){
+            return self.xScale.bandwidth()-4;
+        });
+        svgData.exit().remove();
+      //  this.svgdom.selectAll('.MyRect').data(datas).enter().append('g')
+      svgData.each((d,i,nodes)=>{
             console.log(nodes,'nodes')
             D3.select(nodes[i]).transition().attr('height',self.yScale(d))
            .attr('y',self.state.svgWidth - 150 - self.yScale(d))
         })
-
+        // svgData.enter().each((d,i,nodes)=>{
+        //     console.log(nodes,'nodes')
+        //     D3.select(nodes[i]).transition().attr('height',self.yScale(d))
+        //    .attr('y',self.state.svgWidth - 150 - self.yScale(d))
+        // })
  
        }
     
@@ -178,7 +206,7 @@ class D3demo1 extends React.Component{
         return (
         <div style={{display:'flex',height:'400px',alignItems:'center'}}>
         <svg ref='digi' width={this.state.svgWidth} height={this.state.svgHeight}>
-           <g  transform={`translate(100,${this.state.svgHeight-20})`}></g>
+       
             
         </svg>
         {/* <div ref='svgdemo' className='lala'>
