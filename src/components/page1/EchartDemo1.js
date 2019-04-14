@@ -1,4 +1,4 @@
- import mypic from '../assets/img/sdf.jpg'
+ import mypic from '../../assets/img/sdf.jpg'
 class EchartDemo1 extends React.Component{
     mychart;
     chartOption;

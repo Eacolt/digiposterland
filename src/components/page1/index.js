@@ -1,6 +1,9 @@
-
-import Page1 from './page1'
-class App extends React.Component {
+ 
+import EchartDemo1 from './EchartDemo1'
+import EchartDemoLine from './EchartDemoLine.js';
+import EchartDemoRadar from './EchartDemoRadar.js'
+import D3react from './D3react.js'
+class Index extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -36,11 +39,14 @@ class App extends React.Component {
 		console.log('更舞台更新')
 		return (
 			<div style={{display:'flex',flexWrap:'wrap',justifyContent:'start',alignItems:'center'}}>
-				<Page1/>
+				<D3react datas={this.state.digiData}/>
+				<EchartDemo1 shown={this.state.showme} />
+				<EchartDemoLine  shown={this.state.showme}/>
+				<EchartDemoRadar shown={this.state.showme}/>
 			</div>
 
 
 		)
 	}
 }
-export default App;
+export default Index;
