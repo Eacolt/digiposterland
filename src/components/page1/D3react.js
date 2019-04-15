@@ -81,62 +81,7 @@ class D3react extends React.Component{
    mybox.attr('x','200').attr('y',100).attr('fill','red')
    .attr('width','22').attr('height',22);
 
-    var gArc_d3  = D3.select(this.refs.myArc);
-    var arcData = [
-        {label: 'A', startAngle: 0, endAngle: 0.2},
-        {label: 'B', startAngle: 0.2, endAngle: 0.6},
-        {label: 'C', startAngle: 0.6, endAngle: 1.4},
-        {label: 'D', startAngle: 1.4, endAngle: 3},
-        {label: 'E', startAngle: 3, endAngle: 2* Math.PI}
-    ];
-    function Arc(){
-       function arc(){
-           buffer = 111;
-       }
-       arc.radius = 100;
-       return arc;
-    }
-    let meArc = Arc();
-
-   console.log(meArc.radius,'<<<')
- 
-    var arcGenerator = D3.arc()
-    .innerRadius(20)
-    .outerRadius(100)
-    .cornerRadius(4)
-    .padAngle(0.06)
-    //console.log('arGGGG',arcGenerator)
-    // var arcGenerator = arc({
-    //     innerRadius: 20,
-    //     outerRadius: 100,
-    //     startAngle: 0,
-    //     endAngle: Math.PI*2
-    // });
-    console.log('......>>>',arcGenerator)
-    gArc_d3.selectAll('path')
-    .data(arcData)
-    .enter()
-    .append('path')
-    .attr('d',arcGenerator);
-    // .attr('fill-opacity',0.4)
-   gArc_d3.attr('transform','rotate(0,100,100)')
-
-     gArc_d3.transition()
-     .attr('transform','rotate(-90,100,100)')
-     .duration(1000)
- 
-  
-//    .attr('fill-opacity',1)
-//    .duration(1000);
-
-// gArc_d3.attr('transform','translate(200,300)')
-//  .attr('dx','0')
-//    gsap.TweenMax.to(this.refs.myArc,6,{
- 
-//        opacity:'0.2',
-//        transform:'translate(330,0)'
-//    })
-   console.log(gsap.TweenMax,'TweenMax')
+   this.createLineSvg();
     // gArc_d3.attr('d',arcGenerator)
     // gArc_d3.call(arc)
   
@@ -146,6 +91,84 @@ class D3react extends React.Component{
 //        mybox.transition().attr('height',200)
 //        .attr('y',100-200+22)
 //    },2000)
+    }
+    createLineSvg(){
+        var lineGenerator = D3.line();
+        var points = [
+            [0, 80],
+            [100, 100],
+            [200, 30],
+            [300, 50],
+            [400, 40],
+            [450, 80]
+          ];
+
+          var pathData = lineGenerator(points);
+        //    D3.select(this.refs.myArc).append('path')
+        D3.select(this.refs.myArc).datum(points).append('path')
+   .attr('d', lineGenerator)
+// .attr('d', lineGenerator(points))
+  .attr('stroke-width','2')
+  .attr('stroke','blue')
+  .attr('fill','none')
+    //     var gArc_d3  = D3.select(this.refs.myArc);
+    //     var lineGenerator = D3.line()
+    //     .x((d)=>d)
+    //     .y((d)=>d)
+ 
+    //    // var pathData = lineGenerator(lineData);
+
+    //     gArc_d3.selectAll().data(points).enter().append('path')
+    //     .attr('d',lineGenerator)
+
+        // .x(function(d){return d})
+        // .y(function(d){return d})
+        //.interpolate('line')
+
+       // gArc_d3.attr('d',pathData);
+
+
+    }
+    createArcSvg(){
+
+        var gArc_d3  = D3.select(this.refs.myArc);
+        var arcData = [
+            {label: 'A', startAngle: 0, endAngle: 0.2},
+            {label: 'B', startAngle: 0.2, endAngle: 0.6},
+            {label: 'C', startAngle: 0.6, endAngle: 1.4},
+            {label: 'D', startAngle: 1.4, endAngle: 3},
+            {label: 'E', startAngle: 3, endAngle: 2* Math.PI}
+        ];
+        
+    
+     
+        var arcGenerator = D3.arc()
+        .innerRadius(20)
+        .outerRadius(100)
+        .cornerRadius(4)
+        .padAngle(0.06)
+     
+        console.log('......>>>',arcGenerator)
+        gArc_d3.selectAll('path')
+        .data(arcData)
+        .enter()
+        .append('path')
+        .attr('d',arcGenerator);
+        // .attr('fill-opacity',0.4)
+        gArc_d3.attr('transform','rotate(0,100,100) translate(200,200)')
+      
+      gsap.TweenMax.set(this.refs.myArc,{
+        transformOrigin:'50% 50%',
+        scaleX:'0.5',
+        scaleY:'0.5'
+      })
+       gsap.TweenMax.to(this.refs.myArc,6,{
+           rotation:360,
+           scaleX:'1',
+           scaleY:'1',
+     
+      
+       })
     }
     updateXAxis(){
         if(!this.svgdemo_d3)return;
