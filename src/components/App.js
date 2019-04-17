@@ -1,5 +1,6 @@
 
 import Page1 from './page1'
+import Page2 from './page2/indexs.jsx'
 class App extends React.Component {
 	constructor(props) {
 		super(props)
@@ -8,7 +9,6 @@ class App extends React.Component {
 			digiData:[2,1,2,5]
 		}
 	}
-
 	componentDidMount() {
 		let self = this;
 		// setInterval(() => {
@@ -29,14 +29,14 @@ class App extends React.Component {
 		},2000)
 		self.setState({})
 
-
 		
 	}
 	render() {
 		console.log('更舞台更新')
 		return (
 			<div style={{display:'flex',flexWrap:'wrap',justifyContent:'start',alignItems:'center'}}>
-				<Page1/>
+				{/* <Page1/> */}
+				<Page2/>
 			</div>
 
 
