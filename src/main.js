@@ -7,7 +7,7 @@ ReactDOM.render(
     document.getElementById('app')
 );
  
-window.addEventListener('load',function d(){
+window.addEventListener('DOMContentLoaded',function d(){
     autoScreen();
     document.getElementById('app').style.setProperty('visibility','visible')
 })
