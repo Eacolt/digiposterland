@@ -45,11 +45,7 @@ module.exports = {
 			ReactDOM: 'react-dom'
 	 
 		}),
-		new CopyPlugin([{
-			from:'./assets/img',
-			to:'public/img'
-		},
-		{from:'./assets/sound',to:'public/sound'}]),
+	 
 		new MiniCssExtractPlugin({
 			filename: baseConfig.useHash ? 'public/css/[hash].bundle.css' : 'public/css/[name].bundle.css'
 		})
