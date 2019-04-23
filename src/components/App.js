@@ -1,6 +1,8 @@
 
 import Page1 from './page1'
-import Page2 from './page2/indexs.jsx'
+import Page2 from './page2/index.jsx'
+import './App.css'
+ 
 class App extends React.Component {
 	constructor(props) {
 		super(props)
@@ -9,7 +11,9 @@ class App extends React.Component {
 			digiData:[2,1,2,5]
 		}
 	}
+
 	componentDidMount() {
+
 		let self = this;
 		// setInterval(() => {
 		//    // self.state.digiData.splice(self.state.digiData.length,0,4)
@@ -21,23 +25,30 @@ class App extends React.Component {
 			 
 		// 	}))
 		// }, 2000);
-		setTimeout(()=>{
-			self.setState(Object.assign(self.state,{
-				digiData:[12,13,13,23]
-			}))
-			console.log('fuuuk')
-		},2000)
-		self.setState({})
+		// setTimeout(()=>{
+		// 	self.setState(Object.assign(self.state,{
+		// 		digiData:[12,13,13,23]
+		// 	}))
+		// 	console.log('fuuuk')
+		// },2000)
+	 // self.setState({})
 
 		
 	}
 	render() {
 		console.log('更舞台更新')
 		return (
-			<div style={{display:'flex',flexWrap:'wrap',justifyContent:'start',alignItems:'center'}}>
-				{/* <Page1/> */}
-				<Page2/>
+			// <div style={{display:'flex',flexWrap:'wrap',justifyContent:'start',alignItems:'center'}}>
+			// 	{/* <Page1/> */}
+			// 	<Page2/>
+			// </div>
+		 
+            <div style={{fontSize:'0.5rem'}}>
+					<Page2/>
+				 
 			</div>
+
+		 
 
 
 		)
