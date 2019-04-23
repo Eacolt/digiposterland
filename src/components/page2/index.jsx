@@ -59,7 +59,7 @@ class Index extends React.Component {
 						{
 							name:'访问来源',
 							type:'pie',
-							radius : ['32%','50%'],
+							radius : [20,100],
 							center: ['40%', '50%'],
 					 
 							avoidLabelOverlap: false,
@@ -132,7 +132,7 @@ class Index extends React.Component {
 	render() {
 		return (
 		   <div>
-			   <div ref="demo" style={{position:'relative',padding:'0.1rem',borderRadius:'50%',border:'2px solid red',width:'4rem',height:'4rem',background:'gray'}}>
+			   <div ref="demo" style={{position:'relative',padding:'0.1rem',borderRadius:'50%',border:'2px solid red',width:'6rem',height:'4rem',background:'gray'}}>
 			     {/* <div ref="demo" style={{position:'absolute',border:'2px solid green',width:'100%',height:'100%' }}></div> */}
 			   </div>
 		   </div>
