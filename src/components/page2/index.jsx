@@ -3,7 +3,7 @@
 import D3Lines from './D3Lines.jsx'
 import Axios from '_axios@0.18.0@axios';
 import UserCounts from './UserCounts.jsx'
-import PressCountLineEx from './PressCountLineEx.jsx'
+import UserAnalyTrendLine from './UserAnalyTrendLine.jsx'
 //长沙县概览;
 
 
@@ -15,11 +15,11 @@ class Index extends React.Component {
 		this.chartOption = null;
 		this.state = {
 			kpiData:{},//左上KPI数据概览
-			original_ratio:{},//原创稿件数量渠道,
-			oneweek:{},//近一周融合传播,
-			paper_sevenday:{},//发稿数量最近七天,
+			original_ratio:{},//原创稿件数量渠道_发稿渠道占比
+			oneweek:{},//发稿数量图——近一周融合传播
+			paper_sevenday:{},//发稿数量最近七天——用户分析趋势图(UserAnalyTrendLine)
 			papercount_ratio:{},//发稿数量渠道占比
-			webo_app:{}//网站微博
+			webo_app:{}//网站微博_内容分析趋势
 
 
 
@@ -81,7 +81,7 @@ class Index extends React.Component {
 				papercount_ratio,
 				webo_app
 			});
-			console.log(self.state)
+			console.log('lalallal',self.state)
 			setTimeout(()=>{
 			
  
@@ -185,9 +185,11 @@ class Index extends React.Component {
 						]
 					
 				};
+			//	self.setState({})
 			 
 				self.myChart.setOption(self.chartOption);
 					 self.myChart.resize();
+				
 	 
 				
 				},1)
@@ -201,6 +203,7 @@ class Index extends React.Component {
 	}
 	render() {
 		let kpiDatalist = Object.entries(this.state.kpiData);
+		console.log(this.state.paper_sevenday,'llll')
 		return (
 		   <div className='Page2'>
 			
@@ -208,7 +211,7 @@ class Index extends React.Component {
 			   <UserCounts kpiDataList={kpiDatalist}/>
 			   {/* 近一周融合传播力,onweek */}
 			   {/* <UserLineEx/> */}
-			   <PressCountLineEx/>
+			   <UserAnalyTrendLine series={this.state.paper_sevenday.series} />
 			   {/* 网站,微博APP转发 */}
 			   {/* <ContentLineEx/> */}
 			   {/* 近七天分日渠道 */}
