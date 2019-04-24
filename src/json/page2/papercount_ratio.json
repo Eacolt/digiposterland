@@ -1,0 +1,31 @@
+{
+    "data": {
+        "pressTypes": [{
+                "dataType": "news",
+                "pressCount": "636"
+            },
+            {
+                "dataType": "epaper",
+                "pressCount": "50"
+            },
+            {
+                "dataType": "wemedia",
+                "pressCount": "133"
+            },
+            {
+                "dataType": "app",
+                "pressCount": "238"
+            },
+            {
+                "dataType": "wechat",
+                "pressCount": "322"
+            },
+            {
+                "dataType": "weibo",
+                "pressCount": "322"
+            }
+        ]
+    },
+    "message": "返回成功",
+    "status": 0
+}

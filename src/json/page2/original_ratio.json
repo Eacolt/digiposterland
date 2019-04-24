@@ -1,0 +1,31 @@
+{
+    "data": {
+        "pressTypes": [{
+                "dataType": "news",
+                "originalCount": "636"
+            },
+            {
+                "dataType": "epaper",
+                "originalCount": "50"
+            },
+            {
+                "dataType": "wemedia",
+                "originalCount": "133"
+            },
+            {
+                "dataType": "app",
+                "originalCount": "238"
+            },
+            {
+                "dataType": "wechat",
+                "originalCount": "322"
+            },
+            {
+                "dataType": "weibo",
+                "originalCount": "322"
+            }
+        ]
+    },
+    "message": "返回成功",
+    "status": 0
+}

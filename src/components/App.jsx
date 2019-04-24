@@ -1,7 +1,7 @@
-
+import './App.less'
 import Page1 from './page1'
 import Page2 from './page2/index.jsx'
-import './App.css'
+ 
  
 class App extends React.Component {
 	constructor(props) {

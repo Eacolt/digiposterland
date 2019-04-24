@@ -1,5 +1,5 @@
-import '@css/App.css'
-import App from './components/App.js'
+ 
+import App from './components/App.jsx'
 import autoScreen from './components/util/autoScreen'
 
 ReactDOM.render(

@@ -1,3 +1,4 @@
+ 
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -7,9 +8,9 @@ const webpack = require('webpack');
 const baseConfig = {
 	useHash:false
 }
-const assetsPath = function(_path) {
-	return path.posix.join('public', _path)
-}
+// const assetsPath = function(_path) {
+// 	return path.posix.join('public', _path)
+// }
 module.exports = {
 	entry: './src/main.js',
 	output: {
@@ -22,13 +23,7 @@ module.exports = {
 		new CleanWebpackPlugin({
 			cleanOnceBeforeBuildPatterns: './dist'
 		}),
-		new webpack.ProvidePlugin({
-			React: 'react',
-			ReactDOM: 'react-dom',
-			Echarts:'echarts',
-			D3:'d3',
-			gsap:'gsap'
-		}),
+	 
 		new HtmlWebpackPlugin({
 			title: 'icourse',
 			template: './index.html',
@@ -43,13 +38,18 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			React: 'react',
 			ReactDOM: 'react-dom',
-			PropTypes:'prop-types'
+			PropTypes:'prop-types',
+			Axios:'axios',
+	 
+			Echarts:'echarts',
+			D3:'d3',
+			gsap:'gsap'
 	 
 		}),
 		new CopyPlugin([
 			{
-				from:__dirname+'/src/public',
-				to:__dirname+'/dist/public'
+				from:__dirname+'/src/json',
+				to:__dirname+'/dist/json'
 			}
 		]),
 	 
@@ -77,7 +77,7 @@ module.exports = {
 			},
 
 			{
-				test: /\.css$/,
+				test: /\.(css|less)$/,
 			 
 				use: [{
 					loader:MiniCssExtractPlugin.loader,
@@ -86,7 +86,7 @@ module.exports = {
 
 						}
 					 
-				}, 'css-loader']
+				}, 'css-loader','less-loader']
 			},
 			{
 				test: /\.(js|jsx)$/,
@@ -98,8 +98,8 @@ module.exports = {
 	resolve: {
 		alias: {
 			'@': path.resolve(__dirname, 'src'),
-			'@css': path.resolve(__dirname, 'src/public/css'),
-			'@img':path.resolve(__dirname, 'src/public/img')
+			'@css': path.resolve(__dirname, 'src/css'),
+			'@img':path.resolve(__dirname, 'src/img')
 		}
 	},
 	optimization:{
