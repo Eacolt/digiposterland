@@ -2,7 +2,7 @@
     position: relative;
     width:19.2rem;
     height:10.8rem;
-    background:url(../../img/bg_page2.png) no-repeat;
+    background:url(../../img/bg_3.jpg) no-repeat;
     background-size: contain;
 }
 .showpic{
@@ -19,10 +19,11 @@
 }
 
 .UserCounts{
-    position: relative;
-    width:7rem;
-    height:2rem;
-    border:1px solid red;
+    position: absolute;
+    width:12.38rem;
+    height:2.61rem;
+    left:0.23rem;
+ 
     display:flex;
     flex-direction: row;
     justify-content: space-around;
@@ -37,26 +38,64 @@
 
         .picture{
             position: relative;
-            width:0.5rem;
-            height:0.5rem;
+            width:0.47rem;
+            height:0.47rem;
         }
         .number{
-            font-size: 0.4rem;
+            font-size: 0.3rem;
+            color:#01D4F9;
         }
         .text{
-            font-size:0.3rem;
+            font-size:0.16rem;
+            color:#01D4F9;
         }
         
 
     }
 }
-@UserAnalyTrendLine_w:7rem; //700px;
-@UserAnalyTrendLine_h:4.9rem;//490px;
-.UserAnalyTrendLine{
-    position: relative;
+@UserAnalyTrendLine_w:6.1rem; //700px;
+@UserAnalyTrendLine_h:4.82rem;//490px;
+.ContentAnalyTrendLine{
+    position: absolute;
     color:red;
     font-size: 2rem;
+    left:12.85rem;
+    top:5.8rem;
+    width:6.1rem;
+    height:4.82rem;
+    border:1px solid red;
+}
+.UserAnalyTrendLine{
+    position: absolute;
+    color:red;
+    font-size: 2rem;
+    left:0.26rem;
+    top:5.8rem;
     width:@UserAnalyTrendLine_w;
     height:@UserAnalyTrendLine_h;
     border:1px solid red;
+}
+.OneWeekSpreadTrendLine{
+    position: absolute;
+    width:12.38rem;
+    height:3.7rem;
+    left:0.26rem;
+    top:2.51rem;
+    border:1px solid red;
+}
+.OriginPressCountPie{
+    position: absolute;
+    border:1px solid red;
+    left:6.54rem;
+    top:5.8rem;
+    width:6.1rem;
+    height:4.82rem; 
+}
+.PressCountRatioPie{
+    position: absolute;
+    border:1px solid red;
+    left:12.85rem;
+    top:0.77rem;
+    width:6.1rem;
+    height:4.82rem;
 }

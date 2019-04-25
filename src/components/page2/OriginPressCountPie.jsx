@@ -31,6 +31,10 @@ class OriginPressCountPie extends React.Component{
                  name:item.dataType
             }
         })
+        var seriesLegend = this.props.pressTypes.map((item)=>{
+            return item.dataType
+        });
+        console.log('xcvseriesLegend',seriesLegend)
         self.chartOption = {
            
         
@@ -40,6 +44,11 @@ class OriginPressCountPie extends React.Component{
                 trigger: 'item',
                 formatter: "{a} <br/>{b} : {c} ({d}%)"
             },
+            // legend: {
+            //     orient: 'vertical',
+            //     x: 'center',
+            //     data:seriesLegend
+            // },
         
             visualMap: {
                 show: false,
@@ -55,6 +64,7 @@ class OriginPressCountPie extends React.Component{
                     type:'pie',
                     radius : [25,80],
                     center: [159, 150],
+                
                     data:seriresData.sort(function (a, b) { return a.value - b.value; }),
                 
                     label: {
@@ -94,7 +104,7 @@ class OriginPressCountPie extends React.Component{
     }
     render(){
         return(
-            <div ref="demo" style={{visibility:'hidden',position:'absolute',left:'13.85rem',top:'0.77rem',padding:'0.1rem',border:'2px solid red',width:'6.1rem',height:'4.82rem'}}>
+            <div ref="demo" className="OriginPressCountPie">
 			    
             </div>
         )
