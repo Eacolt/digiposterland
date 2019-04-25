@@ -25,7 +25,7 @@ function autoScreen(){
                         let blackW = deviceW-appW;
                         let yScale = 1+blackH/appH;
                         let xScale = 1+blackW/appW;
-                        console.log('xxxx',xScale)
+                  
 
 
                         app.style.setProperty('transform',`scaleX(${xScale}) scaleY(${yScale})`);
@@ -59,7 +59,7 @@ function autoScreen(){
                     let blackW = document.documentElement.clientWidth-appW;
                     let yScale = 1+blackH/appH;
                     let xScale = 1+blackW/appW;
-                    console.log('xxxx',xScale)
+               
           
                
                     app.style.setProperty('transform',`scaleX(${xScale}) scaleY(${yScale})`);

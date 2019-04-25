@@ -4,6 +4,7 @@ import D3Lines from './D3Lines.jsx'
 import Axios from '_axios@0.18.0@axios';
 import UserCounts from './UserCounts.jsx'
 import UserAnalyTrendLine from './UserAnalyTrendLine.jsx'
+import OriginPressCountPie from './OriginPressCountPie.jsx'
 //长沙县概览;
 
 
@@ -19,7 +20,8 @@ class Index extends React.Component {
 			oneweek:{},//发稿数量图——近一周融合传播
 			paper_sevenday:{},//发稿数量最近七天——用户分析趋势图(UserAnalyTrendLine)
 			papercount_ratio:{},//发稿数量渠道占比
-			webo_app:{}//网站微博_内容分析趋势
+			webo_app:{},//网站微博_内容分析趋势,
+			freshRender:false
 
 
 
@@ -58,12 +60,12 @@ class Index extends React.Component {
 
 	componentDidMount() {
 		let self = this;
-		let _kpiData,_oneweek;
+		var settimer;
+		var throttles = true;
 		
  
  
-		this.myChart = Echarts.init(this.refs.demo,null);
-
+ 
 		
 		this.reg_pro().then(({
 			kpiData,
@@ -81,118 +83,31 @@ class Index extends React.Component {
 				papercount_ratio,
 				webo_app
 			});
-			console.log('lalallal',self.state)
-			setTimeout(()=>{
+			console.log('lalallal',self.state);
 			
- 
+			self.setState({freshRender:!self.state.freshRender});
+			var setterTime = true;
+			var setters
 
-				var fontsizes = parseInt(document.documentElement.style.fontSize)*0.18;
-	
-				self.chartOption  = {
-				 
-				
-						title: {
-							text: 'Customized Pie',
-							left: 'center',
-							top: 20,
-							textStyle: {
-								color: '#ccc'
-							}
-						},
-					 
-					
-						tooltip : {
-							trigger: 'item',
-							formatter: "{a} <br/>{b} : {c} ({d}%)"
-						},
-					
-						// visualMap: {
-						// 	show: false,
-						// 	min: 80,
-						// 	max: 600,
-						// 	inRange: {
-						// 		colorLightness: [0, 1]
-						// 	}
-						// },
-						legend: {
-							orient: 'vertical',
-							right: '0',
-							data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎'],
-							textStyle:{
-								fontSize:fontsizes
-							}
-						},
-						series : [
-							{
-								name:'访问来源',
-								type:'pie',
-								radius : [20,100],
-								center: ['40%', '50%'],
-						 
-								avoidLabelOverlap: false,
-								
-								data:[
-									{value:335, name:'直接访问',color:'gold'},
-									{value:310, name:'邮件营销',color:'green'},
-									{value:274, name:'联盟广告',color:'purple'},
-									{value:235, name:'视频广告',color:'lightblue'},
-									{value:400, name:'搜索引擎',color:'pink'}
-								],
-								roseType:'area',
-					 
-								label: {
-								 
-									 position:'outside',
-								
-									 
-								},
-								labelLine:false,
-								// labelLine: {
-								// 	normal: {
-								// 		lineStyle: {
-								// 			color: 'rgba(255, 255, 255, 0.3)'
-								// 		},
-								// 		smooth: 0.2,
-								// 		length: 10,
-								// 		length2: 20
-								// 	}
-								// },
+			window.addEventListener('resize',function(){
+				// if(setterTime){
+				// 	clearTimeout(setterTime);
+				// }
+				if(setterTime){
+					setters = setTimeout(()=>{
+						setterTime = true;
+						console.log(888)
+					},300)
+					setterTime = false;
+				}
 		
-		
-								itemStyle: {
-								  color:function(d,i){
-									  return d.data.color
-								 
-								  },
-									 shadowBlur: 10,
-									 
-									// }
-								},
-								// itemStyle: {
-								// 	emphasis: {
-								// 		shadowBlur: 10,
-								// 		shadowOffsetX: 0,
-								// 		shadowColor: 'rgba(0, 0, 0, 0.5)'
-								// 	}
-								// },
-					
-								animationType: 'scale',
-								animationEasing: 'elasticOut',
-								animationDelay: function (idx) {
-									return Math.random() * 200;
-								}
-							}
-						]
-					
-				};
-			//	self.setState({})
-			 
-				self.myChart.setOption(self.chartOption);
-					 self.myChart.resize();
-				
-	 
-				
-				},1)
+
+				//self.setState({freshRender:!self.state.freshRender});
+			})
+			// self.setState({})
+ 
+			console.log('this.state.paper_sevenday.timestamp',this.state.paper_sevenday.timestamp)
+
 		})
 	 
 		
@@ -211,7 +126,8 @@ class Index extends React.Component {
 			   <UserCounts kpiDataList={kpiDatalist}/>
 			   {/* 近一周融合传播力,onweek */}
 			   {/* <UserLineEx/> */}
-			   <UserAnalyTrendLine series={this.state.paper_sevenday.series} />
+			   <UserAnalyTrendLine freshRender={this.state.freshRender} timestamp={this.state.paper_sevenday.timestamp} series={this.state.paper_sevenday.series} />
+			   <OriginPressCountPie freshRender={this.state.freshRender} />
 			   {/* 网站,微博APP转发 */}
 			   {/* <ContentLineEx/> */}
 			   {/* 近七天分日渠道 */}
@@ -220,9 +136,7 @@ class Index extends React.Component {
 			   {/* <OriginPieEx/> */}
 			   {/* 发稿数量渠道占比 */}
 			   {/* <UserAmountPieEx/> */}
-			   <div ref="demo" style={{position:'relative',padding:'0.1rem',borderRadius:'50%',border:'2px solid red',width:'6rem',height:'4rem',background:'gray'}}>
-			    
-				</div>
+	 
 		   </div>
  
 		)
