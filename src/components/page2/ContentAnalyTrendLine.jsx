@@ -84,7 +84,13 @@ class ContentAnalyTrendLine extends React.Component{
                     axisLabel:{
                         color:'#fff',
                         fontSize:fontSize
-                    }
+                    },
+                    splitLine:{
+                        lineStyle:{
+                            opacity:0.5
+                        }
+ 
+                     }
                 
                 },
                 series: series,

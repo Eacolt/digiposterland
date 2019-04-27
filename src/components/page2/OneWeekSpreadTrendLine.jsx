@@ -20,7 +20,10 @@ class OneWeekSpreadTrendLine extends React.Component{
                     data:item[1],
                     type: 'line',
                     smooth:true,
-                    areaStyle: {}
+                    lineStyle:{
+                        color:'#FB9B04'
+                    }
+                   
                 }
             })
             this.myOption.series = series;
@@ -53,20 +56,27 @@ class OneWeekSpreadTrendLine extends React.Component{
      
         var self = this;
         this.myChart = Echarts.init(this.refs.demo);
+ 
        
  
         var seriesData = Object.entries(this.props.series);
         var fontSize = parseInt(document.documentElement.style.fontSize)*0.2;
+
+        console.log('capcap',seriesData)
         var series = seriesData.map((item)=>{
             return {
                 data:item[1],
                 type: 'line',
                 smooth:true,
-                areaStyle: {}
+                lineStyle:{
+                    color:'#FB9B04'
+                }
+               
             }
         })
  
             this.myOption = {
+
                 xAxis: {
                     type: 'category',
                     boundaryGap: false,
@@ -75,13 +85,20 @@ class OneWeekSpreadTrendLine extends React.Component{
                         color:'#fff',
                         fontSize:fontSize
                     }
+                   
                 },
                 yAxis: {
                     type: 'value',
                     axisLabel:{
                         color:'#fff',
                         fontSize:fontSize
-                    }
+                    },
+                    splitLine:{
+                        lineStyle:{
+                            opacity:0.5
+                        }
+ 
+                     }
                 
                 },
                 series: series,

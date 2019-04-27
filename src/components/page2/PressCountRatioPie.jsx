@@ -6,89 +6,113 @@ class PressCountRatioPie extends React.Component{
    constructor(props){
        super(props)
    }
-   componentWillReceiveProps(){
-       this.refs.demo.style.visibility = 'hidden'
+   componentWillReceiveProps(nextprops){
+       console.log('互砸啊啊啊啊',nextprops)
+ 
    }
    componentWillUpdate(nextprops){
-       this.myChart.resize();
+
+    
+    this.myChart.resize();
+       this.refs.demo.style.visibility = 'hidden';
+       var seriesLegend = [],self= this;
+       var seriresData = this.props.pressTypes.map((item)=>{
+        let names = {
+            news:['网站','#0E6DE9'],
+            weibo:['微博','#AC4ED3'],
+            wechat:['微信','#00AF6D'],
+       
+            app:['APP','#E6AF08'],
+            epaper:['数字报','pink'],
+            wemedia:['自媒体','brown']
+        };
+     
+        seriesLegend.push(names[item.dataType][0])
+    
+        return{
+            value:item.pressCount,
+             name:names[item.dataType][0],
+             color:names[item.dataType][1]
+        }
+    });
+ 
+    self.chartOption.series[0].data=seriresData.sort(function (a, b) { return a.value - b.value; });
+    self.chartOption.legend.data=seriesLegend;
+     this.myChart.setOption(self.chartOption)
        if(nextprops.freshRender !== this.props.freshRender){
-           let _newOption = this.myChart.getOption();
+      
+      
+          
            this.myChart.clear();
-           this.myChart.setOption(_newOption)
+           this.myChart.setOption(this.chartOption)
       }
    }
    componentDidUpdate(){
        setTimeout(()=>{  this.refs.demo.style.visibility = 'visible'
-       console.log('updatedd..')},10)
+     },10)
    }
    componentDidMount(){
-       var self = this;
+       var self = this,seriesLegend = [];
        self.myChart = Echarts.init(this.refs.demo);
        var seriresData = this.props.pressTypes.map((item)=>{
-           let names;
+           let names = {
+               news:['网站','#0E6DE9'],
+               weibo:['微博','#AC4ED3'],
+               wechat:['微信','#00AF6D'],
+          
+               app:['APP','#E6AF08'],
+               epaper:['数字报','pink'],
+               wemedia:['自媒体','brown']
+           };
+        
+           seriesLegend.push(names[item.dataType][0])
        
            return{
-               value:item.pressCount,
-                name:item.dataType
+                value:item.pressCount,
+                name:names[item.dataType][0],
+                color:names[item.dataType][1],
+            
            }
        });
-       var seriesLegend = this.props.pressTypes.map((item)=>{
-  
-        return item.dataType
-    })
+     
        self.chartOption = {
-          
-       
-       
-       
+
            tooltip : {
                trigger: 'item',
                formatter: "{a} <br/>{b} : {c} ({d}%)"
            },
            legend: {
             orient: 'vertical',
-            x: 'right',
+            x: '70%',
+            y:'middle',
+            textStyle:{
+                color:'#fff'
+            },
             data:seriesLegend
         },
-           visualMap: {
-               show: false,
-               min: 80,
-               max: 600,
-               inRange: {
-                   colorLightness: [0, 1]
-               }
-           },
+           
            series : [
                {
                    name:'访问来源',
                    type:'pie',
-                   radius : [25,80],
-                   center: [159, 180],
+                   radius : ['15%','50%'],
+                   center: ['40%', '50%'],
                    data:seriresData.sort(function (a, b) { return a.value - b.value; }),
-               
-                   label: {
-                       normal: {
-                           textStyle: {
-                               color: '#fff'
-                           }
-                       }
-                   },
-                   labelLine: {
-                       normal: {
-                           lineStyle: {
-                               color: 'rgba(255, 255, 255, 0.3)'
-                           },
-                           smooth: 0.2,
-                           length: 10,
-                           length2: 20
-                       }
-                   },
+         
+                   label: false,
+                   labelLine:false,
                    itemStyle: {
-                       normal: {
-                           color: '#c23531',
+     
+                       
+                           color: function(item){
+                         
+                               return item.data.color
+                        
+
+                           },
                            shadowBlur: 200,
                            shadowColor: 'rgba(0, 0, 0, 0.5)'
-                       }
+                    
                    },
        
                    // animationType: 'scale',
@@ -103,7 +127,7 @@ class PressCountRatioPie extends React.Component{
    }
    render(){
        return(
-           <div ref="demo"  className="PressCountRatioPie" style={{visibility:'hidden'}}>
+           <div ref="demo"  className='PressCountRatioPie' style={{visibility:'hidden'}}>
                
            </div>
        )
@@ -111,6 +135,7 @@ class PressCountRatioPie extends React.Component{
 }
 export default PressCountRatioPie
 PressCountRatioPie.defaultProps = {
+    // customClass:'PressCountRatioPie',
    pressTypes:[{
        "dataType": "news",
        "pressCount": "636"

@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 const baseConfig = {
 	useHash:false
@@ -12,6 +13,7 @@ const baseConfig = {
 // 	return path.posix.join('public', _path)
 // }
 module.exports = {
+    mode:'production',
 	entry: './src/main.js',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -96,8 +98,14 @@ module.exports = {
 			},
 			{
 				test: /\.(js|jsx)$/,
-				use: 'babel-loader',
-				include: path.resolve(__dirname, 'src')
+				use:{
+                    loader:'babel-loader',
+                    options:{
+                        presets:['@babel/preset-env']
+                    }
+
+                }
+			 
 			}
 		]
 	},
@@ -109,6 +117,18 @@ module.exports = {
 		}
 	},
 	optimization:{
+        minimizer: [new UglifyJsPlugin({
+            exclude: /node_modules/,
+            uglifyOptions:{
+                compress:{
+                    warnings:false,
+                    drop_debugger:true,
+                    drop_console:true
+    
+                }
+            }
+        
+        })],
 		splitChunks:{
 			cacheGroups:{
 				js:{
@@ -118,13 +138,6 @@ module.exports = {
 				}
 			}
 		}
-	},
-	devServer: {
-		host: 'localhost',
-		contentBase:'./dist',
-		port: 8082,
-		open: true,
-		hot: true
 	}
-
+ 
 }
