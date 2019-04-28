@@ -25,7 +25,6 @@ class OriginPressCountPie extends React.Component{
         self.myChart = Echarts.init(this.refs.demo);
         var seriresData = this.props.pressTypes.map((item)=>{
             let names;
-        
             return{
                 value:item.pressCount,
                  name:item.dataType
