@@ -1,6 +1,7 @@
  import './index.less'
  
 import D3Lines from './D3Lines.jsx'
+import Title from '../common/Title.jsx'
 import Axios from '_axios@0.18.0@axios';
 import UserCounts from './UserCounts.jsx'
 import UserAnalyTrendLine from './UserAnalyTrendLine.jsx'
@@ -32,8 +33,7 @@ class Index extends React.Component {
 			webo_app:{},//6.内容分析趋势图
 			freshRender:false
 
-
-
+ 
 		}
 	}
 	getJson_promise(url){
@@ -49,12 +49,12 @@ class Index extends React.Component {
 	}
 
 	async reg_pro(){
-		let kpiData = await this.getJson_promise('../../json/page2/kpi_view.json');
-		let oneweek = await this.getJson_promise('../../json/page2/oneweek.json');
-		let original_ratio = await this.getJson_promise('../../json/page2/original_ratio.json');
-		let paper_sevenday = await this.getJson_promise('../../json/page2/paper_sevenday.json');
-		let papercount_ratio = await this.getJson_promise('../../json/page2/papercount_ratio.json');
-		let webo_app = await this.getJson_promise('../../json/page2/webo_app.json');
+		let kpiData = await this.getJson_promise('./json/page2/kpi_view.json');
+		let oneweek = await this.getJson_promise('./json/page2/oneweek.json');
+		let original_ratio = await this.getJson_promise('./json/page2/original_ratio.json');
+		let paper_sevenday = await this.getJson_promise('./json/page2/paper_sevenday.json');
+		let papercount_ratio = await this.getJson_promise('./json/page2/papercount_ratio.json');
+		let webo_app = await this.getJson_promise('./json/page2/webo_app.json');
 		return {
 			kpiData,
 			oneweek,
@@ -122,7 +122,12 @@ class Index extends React.Component {
 
 		})
 	 
-		
+		setInterval(()=>{
+			this.setState({
+				freshRender:!self.state.freshRender
+			})
+		},5000)
+   
 	
 	}
 	componentDidUpdate(){
@@ -139,13 +144,15 @@ class Index extends React.Component {
  
 			  
 			   <UserAnalyTrendLine freshRender={this.state.freshRender} timestamp={this.state.paper_sevenday.timestamp} series={this.state.paper_sevenday.series} />
-			    {/* 累计用户渠道占比 */}
-			   <OriginPressCountPie freshRender={this.state.freshRender} pressTypes={this.state.papercount_ratio.pressTypes} />
+				{/* 累计用户渠道占比 */}
+				<OriginPressCountPie customClass='OriginPressCountPie' freshRender={this.state.freshRender}pressTypes={this.state.original_ratio.pressTypes}/>
+			  
 			  {/* 内容分析趋势图 */}
 			   <ContentAnalyTrendLine freshRender={this.state.freshRender} timestamp={this.state.webo_app.timestamp} series={this.state.webo_app.series} />
 
-			   <PressCountRatioPie freshRender={this.state.freshRender} pressTypes={this.state.original_ratio.pressTypes}/>
+			   <PressCountRatioPie freshRender={this.state.freshRender} pressTypes={this.state.papercount_ratio.pressTypes}/>
 			  <OneWeekSpreadTrendLine freshRender={this.state.freshRender} timestamp={this.state.oneweek.timestamp} series={this.state.oneweek.series} />
+			  <Title text='长沙县数据概览'/>
 		   </div>
  
 		)

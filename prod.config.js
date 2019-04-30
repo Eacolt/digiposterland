@@ -12,6 +12,7 @@ const baseConfig = {
 // 	return path.posix.join('public', _path)
 // }
 module.exports = {
+    mode:'development',
 	entry: './src/main.js',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -120,9 +121,9 @@ module.exports = {
 		}
 	},
 	devServer: {
-		host: 'localhost',
+		host: '0.0.0.0',
 		contentBase:'./dist',
-		port: 8082,
+		port: 8081,
 		open: true,
 		hot: true
 	}

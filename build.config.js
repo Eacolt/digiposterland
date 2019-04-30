@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 const baseConfig = {
 	useHash:false
@@ -12,18 +13,16 @@ const baseConfig = {
 // 	return path.posix.join('public', _path)
 // }
 module.exports = {
+    mode:'production',
 	entry: './src/main.js',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: baseConfig.useHash ? 'js/[hash].bundle.js' : 'js/[name].bundle.js'
 	},
-
 	plugins: [
-
 		new CleanWebpackPlugin({
 			cleanOnceBeforeBuildPatterns: './dist'
 		}),
-	 
 		new HtmlWebpackPlugin({
 			title: 'icourse',
 			template: './index.html',
@@ -33,7 +32,6 @@ module.exports = {
 				removeAttributeQuotes: true,
 				removeComments: true
 			}
-
 		}),
 		new webpack.ProvidePlugin({
 			React: 'react',
@@ -41,12 +39,9 @@ module.exports = {
 			PropTypes:'prop-types',
 			Axios:'axios',
 			PIXI:'pixi.js',
-		 
-	 
 			Echarts:'echarts',
 			D3:'d3',
 			gsap:'gsap'
-	 
 		}),
 		new CopyPlugin([
 			{
@@ -58,11 +53,9 @@ module.exports = {
 				to:__dirname+'/dist/spine'
 			}
 		]),
-	 
 		new MiniCssExtractPlugin({
 			filename: baseConfig.useHash ? 'css/[hash].bundle.css' : 'css/[name].bundle.css'
 		})
-
 	],
 	module: {
 		rules: [
@@ -81,7 +74,6 @@ module.exports = {
 					}
 				]
 			},
-
 			{
 				test: /\.(css|less)$/,
 			 
@@ -91,13 +83,18 @@ module.exports = {
 							publicPath:'../'
 
 						}
-					 
 				}, 'css-loader','less-loader']
 			},
 			{
 				test: /\.(js|jsx)$/,
-				use: 'babel-loader',
-				include: path.resolve(__dirname, 'src')
+				use:{
+                    loader:'babel-loader',
+                    options:{
+                        presets:['@babel/preset-env']
+                    }
+
+                }
+			 
 			}
 		]
 	},
@@ -109,6 +106,18 @@ module.exports = {
 		}
 	},
 	optimization:{
+        minimizer: [new UglifyJsPlugin({
+            exclude: /node_modules/,
+            uglifyOptions:{
+                compress:{
+                    warnings:false,
+                    drop_debugger:true,
+                    drop_console:true
+    
+                }
+            }
+        
+        })],
 		splitChunks:{
 			cacheGroups:{
 				js:{
@@ -118,13 +127,6 @@ module.exports = {
 				}
 			}
 		}
-	},
-	devServer: {
-		host: 'localhost',
-		contentBase:'./dist',
-		port: 8082,
-		open: true,
-		hot: true
 	}
-
+ 
 }

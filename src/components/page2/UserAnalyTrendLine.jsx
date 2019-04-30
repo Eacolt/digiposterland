@@ -16,9 +16,18 @@ class UserAnalyTrendLine extends React.Component{
         // this.refs.demo.style.visibility = 'hidden'
           if(this.myOption){
             var seriesData = Object.entries(this.props.series);
+            var legendName = []
             var series = seriesData.map((item)=>{
-                console.log('..',item)
+                let names = {
+                    newsPressCount:'网站发稿量',
+                    appPressCount:'APP发稿量',
+                    weiboPressCount:'微博发稿量',
+                    wechatPressCount:'微信发稿量'
+
+                }
+                legendName.push(names[item[0]])
                 return {
+                    name:names[item[0]],
                     data:item[1],
                     type: 'line',
                     smooth:true,
@@ -26,23 +35,28 @@ class UserAnalyTrendLine extends React.Component{
                 }
             })
             this.myOption.series = series;
-            
-            // console.log('updddd self.props.timestamp',self.props.timestamp)
-            let newOption = Object.assign( this.myOption,{
-                xAxis: {
-                    data:self.props.timestamp,
-               
-                },
+            this.myOption.xAxis = Object.assign(this.myOption.xAxis,{
+                data:self.props.timestamp,
+            });
+            legendName = legendName.map((item)=>{
+                return {
+                    name:item,
+                    icon:'roundRect'
+                }
             })
+            this.myOption.legend = Object.assign(this.myOption.legend,{
+                 data:legendName
+            });
+      
         
-            this.myChart.setOption(newOption);
+            this.myChart.setOption(this.myOption);
  
  
 
             if(nextprops.freshRender !== this.props.freshRender){
-                 let _newOption = this.myChart.getOption();
+               
                  this.myChart.clear();
-                 this.myChart.setOption(_newOption)
+                 this.myChart.setOption(this.myOption)
             }
 
           }
@@ -78,12 +92,28 @@ class UserAnalyTrendLine extends React.Component{
                         fontSize:fontSize
                     }
                 },
+                legend:{
+                    right:'5%',
+                    
+                    textStyle:{
+                        color:'#fff'
+                    },
+                    top: '5%',
+                    
+                    
+                },
                 yAxis: {
                     type: 'value',
                     axisLabel:{
                         color:'#fff',
                         fontSize:fontSize
+                    },
+                    splitLine:{
+                        lineStyle:{
+                            opacity:0.5
+                        }
                     }
+                     
                 
                 },
                 series: series,

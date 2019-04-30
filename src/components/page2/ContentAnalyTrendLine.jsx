@@ -17,33 +17,54 @@ class ContentAnalyTrendLine extends React.Component{
         // this.refs.demo.style.visibility = 'hidden'
           if(this.myOption){
             var seriesData = Object.entries(this.props.series);
+            var legendName = [];
             var series = seriesData.map((item)=>{
-                console.log('..',item)
+                let names = {
+                    newsForwardCount:'网站转发数',
+                    appForwardCount:'APP转发数',
+                    weiboForwardCount:'微博转发数',
+                    wechatReadCount:'微信阅读数'
+
+                }
+ 
+                legendName.push(names[item[0]])
+                
+            
                 return {
+                    name:names[item[0]],
                     data:item[1],
                     type: 'line',
                     smooth:true,
                     areaStyle: {}
                 }
+            });
+            legendName = legendName.map((item)=>{
+                return {
+                    name:item,
+                    icon:'roundRect'
+                }
             })
+            console.log('legendNamelegendName',legendName)
             this.myOption.series = series;
             
             // console.log('updddd self.props.timestamp',self.props.timestamp)
-            let newOption = Object.assign( this.myOption,{
-                xAxis: {
-                    data:self.props.timestamp,
-               
-                },
+      
+            this.myOption.xAxis = Object.assign(this.myOption.xAxis,{
+                data:self.props.timestamp,
             })
-        
-            this.myChart.setOption(newOption);
+      
+            this.myOption.legend = Object.assign(this.myOption.legend,{
+                data:legendName
+           });
+            
+            this.myChart.setOption(this.myOption);
  
  
 
             if(nextprops.freshRender !== this.props.freshRender){
-                 let _newOption = this.myChart.getOption();
+              
                  this.myChart.clear();
-                 this.myChart.setOption(_newOption)
+                 this.myChart.setOption(this.myOption)
             }
 
           }
@@ -79,12 +100,28 @@ class ContentAnalyTrendLine extends React.Component{
                         fontSize:fontSize
                     }
                 },
+                legend:{
+                    right:'5%',
+                    
+                    textStyle:{
+                        color:'#fff'
+                    },
+                    top: '5%',
+                    
+                    
+                },
                 yAxis: {
                     type: 'value',
                     axisLabel:{
                         color:'#fff',
                         fontSize:fontSize
-                    }
+                    },
+                    splitLine:{
+                        lineStyle:{
+                            opacity:0.5
+                        }
+ 
+                     }
                 
                 },
                 series: series,

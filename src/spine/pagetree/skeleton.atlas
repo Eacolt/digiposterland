@@ -1,0 +1,615 @@
+
+skeleton.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/Electricity 014 Charge Radial_00000
+  rotate: false
+  xy: 1222, 686
+  size: 125, 125
+  orig: 125, 125
+  offset: 0, 0
+  index: -1
+images/Electricity 014 Charge Radial_00002
+  rotate: false
+  xy: 1349, 686
+  size: 125, 125
+  orig: 125, 125
+  offset: 0, 0
+  index: -1
+images/Electricity 014 Charge Radial_00004
+  rotate: false
+  xy: 788, 645
+  size: 125, 125
+  orig: 125, 125
+  offset: 0, 0
+  index: -1
+images/Electricity 014 Charge Radial_00006
+  rotate: false
+  xy: 787, 518
+  size: 125, 125
+  orig: 125, 125
+  offset: 0, 0
+  index: -1
+images/Electricity 014 Charge Radial_00008
+  rotate: false
+  xy: 915, 645
+  size: 125, 125
+  orig: 125, 125
+  offset: 0, 0
+  index: -1
+images/Electricity 014 Charge Radial_00010
+  rotate: false
+  xy: 914, 518
+  size: 125, 125
+  orig: 125, 125
+  offset: 0, 0
+  index: -1
+images/Electricity 014 Charge Radial_00013
+  rotate: false
+  xy: 1042, 647
+  size: 125, 125
+  orig: 125, 125
+  offset: 0, 0
+  index: -1
+images/Electricity 014 Charge Radial_00015
+  rotate: false
+  xy: 827, 391
+  size: 125, 125
+  orig: 125, 125
+  offset: 0, 0
+  index: -1
+images/Electricity 014 Charge Radial_00017
+  rotate: false
+  xy: 827, 264
+  size: 125, 125
+  orig: 125, 125
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00000
+  rotate: true
+  xy: 1766, 1682
+  size: 184, 245
+  orig: 184, 245
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00001
+  rotate: false
+  xy: 648, 2
+  size: 188, 243
+  orig: 188, 243
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00002
+  rotate: false
+  xy: 1105, 1796
+  size: 190, 250
+  orig: 190, 250
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00003
+  rotate: false
+  xy: 604, 1003
+  size: 190, 250
+  orig: 190, 250
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00004
+  rotate: false
+  xy: 604, 1255
+  size: 192, 250
+  orig: 192, 250
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00005
+  rotate: false
+  xy: 292, 228
+  size: 195, 250
+  orig: 195, 250
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00006
+  rotate: false
+  xy: 907, 1796
+  size: 196, 250
+  orig: 196, 250
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00007
+  rotate: false
+  xy: 1082, 1507
+  size: 196, 231
+  orig: 196, 231
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00008
+  rotate: true
+  xy: 1082, 1310
+  size: 195, 225
+  orig: 195, 225
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00009
+  rotate: false
+  xy: 1297, 1807
+  size: 195, 239
+  orig: 195, 239
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00010
+  rotate: true
+  xy: 844, 1544
+  size: 194, 236
+  orig: 194, 236
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00011
+  rotate: true
+  xy: 1002, 774
+  size: 194, 218
+  orig: 194, 218
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00012
+  rotate: true
+  xy: 844, 1349
+  size: 193, 236
+  orig: 193, 236
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00013
+  rotate: true
+  xy: 1032, 970
+  size: 158, 226
+  orig: 158, 226
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00014
+  rotate: false
+  xy: 489, 228
+  size: 157, 250
+  orig: 157, 250
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00015
+  rotate: true
+  xy: 2, 6
+  size: 182, 250
+  orig: 182, 250
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00016
+  rotate: false
+  xy: 604, 751
+  size: 182, 250
+  orig: 182, 250
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00017
+  rotate: true
+  xy: 1494, 1864
+  size: 182, 250
+  orig: 182, 250
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00018
+  rotate: false
+  xy: 604, 499
+  size: 181, 250
+  orig: 181, 250
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00019
+  rotate: true
+  xy: 798, 1167
+  size: 180, 238
+  orig: 180, 238
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00020
+  rotate: true
+  xy: 796, 986
+  size: 179, 234
+  orig: 179, 234
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00021
+  rotate: true
+  xy: 1038, 1130
+  size: 178, 230
+  orig: 178, 230
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00022
+  rotate: false
+  xy: 648, 247
+  size: 177, 250
+  orig: 177, 250
+  offset: 0, 0
+  index: -1
+images/Sparks 061 Ray up loop_00023
+  rotate: true
+  xy: 1746, 1868
+  size: 178, 250
+  orig: 178, 250
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00000
+  rotate: false
+  xy: 818, 1380
+  size: 17, 125
+  orig: 17, 125
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00001
+  rotate: true
+  xy: 254, 12
+  size: 18, 125
+  orig: 18, 125
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00002
+  rotate: false
+  xy: 1998, 1921
+  size: 18, 125
+  orig: 18, 125
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00003
+  rotate: false
+  xy: 798, 1380
+  size: 18, 125
+  orig: 18, 125
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00004
+  rotate: false
+  xy: 1169, 647
+  size: 18, 125
+  orig: 18, 125
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00005
+  rotate: false
+  xy: 954, 306
+  size: 18, 125
+  orig: 18, 125
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00006
+  rotate: true
+  xy: 381, 12
+  size: 18, 125
+  orig: 18, 125
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00007
+  rotate: false
+  xy: 2018, 1921
+  size: 18, 125
+  orig: 18, 125
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00008
+  rotate: true
+  xy: 1180, 1776
+  size: 18, 105
+  orig: 18, 105
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00009
+  rotate: false
+  xy: 1189, 669
+  size: 18, 103
+  orig: 18, 103
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00010
+  rotate: true
+  xy: 1180, 1756
+  size: 18, 99
+  orig: 18, 99
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00011
+  rotate: false
+  xy: 1265, 1026
+  size: 18, 97
+  orig: 18, 97
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00012
+  rotate: false
+  xy: 1285, 1028
+  size: 18, 95
+  orig: 18, 95
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00013
+  rotate: true
+  xy: 1180, 1740
+  size: 14, 91
+  orig: 14, 91
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00014
+  rotate: false
+  xy: 1316, 1034
+  size: 14, 89
+  orig: 14, 89
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00015
+  rotate: false
+  xy: 1332, 1036
+  size: 14, 87
+  orig: 14, 87
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00016
+  rotate: false
+  xy: 1348, 1038
+  size: 14, 85
+  orig: 14, 85
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00017
+  rotate: false
+  xy: 1364, 1040
+  size: 14, 83
+  orig: 14, 83
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00018
+  rotate: false
+  xy: 838, 172
+  size: 14, 81
+  orig: 14, 81
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00019
+  rotate: false
+  xy: 838, 91
+  size: 14, 79
+  orig: 14, 79
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00020
+  rotate: false
+  xy: 854, 180
+  size: 13, 73
+  orig: 13, 73
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00021
+  rotate: false
+  xy: 1209, 705
+  size: 11, 67
+  orig: 11, 67
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00022
+  rotate: false
+  xy: 526, 95
+  size: 11, 63
+  orig: 11, 63
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00023
+  rotate: false
+  xy: 869, 194
+  size: 10, 59
+  orig: 10, 59
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00024
+  rotate: false
+  xy: 539, 101
+  size: 10, 57
+  orig: 10, 57
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00025
+  rotate: false
+  xy: 881, 200
+  size: 10, 53
+  orig: 10, 53
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00026
+  rotate: false
+  xy: 854, 117
+  size: 10, 61
+  orig: 10, 61
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00027
+  rotate: false
+  xy: 838, 18
+  size: 10, 71
+  orig: 10, 71
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00028
+  rotate: false
+  xy: 1039, 433
+  size: 10, 83
+  orig: 10, 83
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00029
+  rotate: false
+  xy: 1305, 1026
+  size: 9, 97
+  orig: 9, 97
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00030
+  rotate: true
+  xy: 1297, 1790
+  size: 9, 103
+  orig: 9, 103
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00031
+  rotate: true
+  xy: 1270, 1125
+  size: 9, 109
+  orig: 9, 109
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00032
+  rotate: true
+  xy: 827, 255
+  size: 7, 115
+  orig: 7, 115
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00033
+  rotate: true
+  xy: 1297, 1801
+  size: 4, 125
+  orig: 4, 125
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00034
+  rotate: false
+  xy: 1260, 1003
+  size: 3, 125
+  orig: 3, 125
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00035
+  rotate: true
+  xy: 1270, 1136
+  size: 3, 125
+  orig: 3, 125
+  offset: 0, 0
+  index: -1
+images/Sparks 063 Ray Up_00036
+  rotate: true
+  xy: 2, 2
+  size: 2, 250
+  orig: 2, 250
+  offset: 0, 0
+  index: -1
+images/qiangguang
+  rotate: true
+  xy: 1222, 813
+  size: 155, 154
+  orig: 155, 154
+  offset: 0, 0
+  index: -1
+images/shuju_1
+  rotate: false
+  xy: 254, 88
+  size: 270, 70
+  orig: 270, 70
+  offset: 0, 0
+  index: -1
+images/shuju_2
+  rotate: false
+  xy: 907, 1740
+  size: 271, 54
+  orig: 271, 54
+  offset: 0, 0
+  index: -1
+images/shuju_3
+  rotate: false
+  xy: 292, 160
+  size: 270, 66
+  orig: 270, 66
+  offset: 0, 0
+  index: -1
+images/shuju_4
+  rotate: false
+  xy: 254, 32
+  size: 264, 54
+  orig: 264, 54
+  offset: 0, 0
+  index: -1
+images/shuju_5
+  rotate: false
+  xy: 1494, 1794
+  size: 270, 68
+  orig: 270, 68
+  offset: 0, 0
+  index: -1
+images/shuxian
+  rotate: false
+  xy: 2, 1264
+  size: 600, 782
+  orig: 600, 782
+  offset: 0, 0
+  index: -1
+images/shuxian1
+  rotate: false
+  xy: 2, 480
+  size: 600, 782
+  orig: 600, 782
+  offset: 0, 0
+  index: -1
+images/yuanxingzhentu01
+  rotate: false
+  xy: 564, 145
+  size: 81, 81
+  orig: 81, 81
+  offset: 0, 0
+  index: -1
+images/yuanxingzhentu02
+  rotate: false
+  xy: 974, 316
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+images/yuanxingzhentu03
+  rotate: false
+  xy: 974, 362
+  size: 69, 69
+  orig: 69, 69
+  offset: 0, 0
+  index: -1
+images/yuanxingzhentu04
+  rotate: false
+  xy: 954, 433
+  size: 83, 83
+  orig: 83, 83
+  offset: 0, 0
+  index: -1
+images/yuanxingzhentu05
+  rotate: false
+  xy: 604, 1747
+  size: 301, 299
+  orig: 301, 299
+  offset: 0, 0
+  index: -1
+images/yuanxingzhentu06
+  rotate: false
+  xy: 604, 1507
+  size: 238, 238
+  orig: 238, 238
+  offset: 0, 0
+  index: -1
+images/yuanxingzhentu07
+  rotate: false
+  xy: 2, 190
+  size: 288, 288
+  orig: 288, 288
+  offset: 0, 0
+  index: -1
+images/yuanxingzhentu08
+  rotate: false
+  xy: 1270, 1141
+  size: 164, 167
+  orig: 164, 167
+  offset: 0, 0
+  index: -1
+images/yuanxingzhentu09
+  rotate: false
+  xy: 788, 772
+  size: 212, 212
+  orig: 212, 212
+  offset: 0, 0
+  index: -1
