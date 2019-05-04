@@ -121,9 +121,9 @@ module.exports = {
 		}
 	},
 	devServer: {
-		host: '0.0.0.0',
+		host: 'localhost',
 		contentBase:'./dist',
-		port: 8081,
+		port: 8082,
 		open: true,
 		hot: true
 	}

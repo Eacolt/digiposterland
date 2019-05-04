@@ -1,0 +1,149 @@
+{
+    "data": [{
+            "count": 100,
+            "forwardCount": 223,
+            "centralMedia": 13235,
+            "provincialMedia": 2367,
+            "countyMedia": 612,
+            "keyWord": "金井镇"
+        },
+        {
+            "count": 87.5,
+            "forwardCount": 231,
+            "centralMedia": 13235,
+            "provincialMedia": 2367,
+            "countyMedia": 612,
+            "keyWord": "星沙街道"
+        },
+        {
+            "count": 80,
+            "forwardCount": 168,
+            "centralMedia": 13235,
+            "provincialMedia": 2367,
+            "countyMedia": 612,
+            "keyWord": "江背镇"
+        },
+        {
+            "count": 72.5,
+            "forwardCount": 156,
+            "centralMedia": 13235,
+            "provincialMedia": 2367,
+            "countyMedia": 612,
+            "keyWord": "果园镇"
+        },
+        {
+            "count": 64.3,
+            "forwardCount": 134,
+            "centralMedia": 13235,
+            "provincialMedia": 2367,
+            "countyMedia": 612,
+            "keyWord": "湘龙街道"
+        },
+        {
+            "count": 62.6,
+            "forwardCount": 132,
+            "centralMedia": 13235,
+            "provincialMedia": 2367,
+            "countyMedia": 612,
+            "keyWord": "春华镇"
+        },
+        {
+            "count": 52,
+            "forwardCount": 100,
+            "centralMedia": 13235,
+            "provincialMedia": 2367,
+            "countyMedia": 612,
+            "keyWord": "北山镇"
+        },
+        {
+            "count": 51.6,
+            "forwardCount": 121,
+            "centralMedia": 13235,
+            "provincialMedia": 2367,
+            "countyMedia": 612,
+            "keyWord": "黄花镇"
+        },
+        {
+            "count": 49.8,
+            "forwardCount": 126,
+            "centralMedia": 13235,
+            "provincialMedia": 2367,
+            "countyMedia": 612,
+            "keyWord": "安沙镇"
+        },
+        {
+            "count": 48.9,
+            "forwardCount": 137,
+            "centralMedia": 13235,
+            "provincialMedia": 2367,
+            "countyMedia": 612,
+            "keyWord": "开慧镇"
+        },
+        {
+            "count": 47.9,
+            "forwardCount": 105,
+            "centralMedia": 13235,
+            "provincialMedia": 2367,
+            "countyMedia": 612,
+            "keyWord": "泉塘街道"
+        },
+        {
+            "count": 45.7,
+            "forwardCount": 132,
+            "centralMedia": 13235,
+            "provincialMedia": 2367,
+            "countyMedia": 612,
+            "keyWord": "黄兴镇"
+        },
+        {
+            "count": 45,
+            "forwardCount": 94,
+            "centralMedia": 13235,
+            "provincialMedia": 2367,
+            "countyMedia": 612,
+            "keyWord": "路口镇"
+        },
+        {
+            "count": 43,
+            "forwardCount": 92,
+            "centralMedia": 13235,
+            "provincialMedia": 2367,
+            "countyMedia": 612,
+            "keyWord": "福临镇"
+        },
+        {
+            "count": 41.9,
+            "forwardCount": 117,
+            "centralMedia": 13235,
+            "provincialMedia": 2367,
+            "countyMedia": 612,
+            "keyWord": "高桥镇"
+        },
+        {
+            "count": 38.7,
+            "forwardCount": 88,
+            "centralMedia": 13235,
+            "provincialMedia": 2367,
+            "countyMedia": 612,
+            "keyWord": "青山铺镇"
+        },
+        {
+            "count": 20.2,
+            "forwardCount": 60,
+            "centralMedia": 13235,
+            "provincialMedia": 2367,
+            "countyMedia": 612,
+            "keyWord": "长龙街道"
+        },
+        {
+            "count": 8.8,
+            "forwardCount": 56,
+            "centralMedia": 13235,
+            "provincialMedia": 2367,
+            "countyMedia": 612,
+            "keyWord": "㮾梨街道"
+        }
+    ],
+    "message": "success!",
+    "status": 0
+}

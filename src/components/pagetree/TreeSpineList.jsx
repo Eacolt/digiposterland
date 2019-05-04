@@ -52,15 +52,13 @@ class TreeSpineList extends React.Component{
                     
                         self.setState({
                             lists:newarr
-
-        
+ 
                         })
 
                     }
                 })
            
-            
-             
+ 
             }
         }
         if(this.state.lists.length>0){

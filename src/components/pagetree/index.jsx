@@ -90,9 +90,9 @@ class Index extends React.Component {
            let myspine = new PIXI.spine.Spine(resources.skeleton_an.spineData)
 		   pixiApp.stage.addChild(myspine);
 
-		   myspine.scale.x = myspine.scale.y = 1.26;
+ 
 
-           myspine.x = 920;
+           myspine.x = 968;
            myspine.y = 550;
 		   myspine.state.setAnimation(0,'animation',true)
 		   setTimeout(()=>{
@@ -100,7 +100,9 @@ class Index extends React.Component {
 		   },2000)
 		   myspine.state.addListener({
 			   complete:function(){
-				self.playTree();
+				setTimeout(()=>{
+					self.playTree();
+				  },2000)
 			   }
 		   })
 		 
@@ -196,6 +198,7 @@ class Index extends React.Component {
 	}
 	  playTree(){
 		  let self = this;
+		 
 	 
 		self.setState({
 			treefreshRender:!self.state.treefreshRender,

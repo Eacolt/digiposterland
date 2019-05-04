@@ -244,7 +244,7 @@ images/Sparks 063 Ray Up_00000
   index: -1
 images/Sparks 063 Ray Up_00001
   rotate: true
-  xy: 254, 12
+  xy: 254, 10
   size: 18, 125
   orig: 18, 125
   offset: 0, 0
@@ -279,7 +279,7 @@ images/Sparks 063 Ray Up_00005
   index: -1
 images/Sparks 063 Ray Up_00006
   rotate: true
-  xy: 381, 12
+  xy: 381, 10
   size: 18, 125
   orig: 18, 125
   offset: 0, 0
@@ -391,7 +391,7 @@ images/Sparks 063 Ray Up_00021
   index: -1
 images/Sparks 063 Ray Up_00022
   rotate: false
-  xy: 526, 95
+  xy: 526, 91
   size: 11, 63
   orig: 11, 63
   offset: 0, 0
@@ -405,7 +405,7 @@ images/Sparks 063 Ray Up_00023
   index: -1
 images/Sparks 063 Ray Up_00024
   rotate: false
-  xy: 539, 101
+  xy: 539, 97
   size: 10, 57
   orig: 10, 57
   offset: 0, 0
@@ -503,7 +503,7 @@ images/qiangguang
   index: -1
 images/shuju_1
   rotate: false
-  xy: 254, 88
+  xy: 292, 156
   size: 270, 70
   orig: 270, 70
   offset: 0, 0
@@ -517,21 +517,21 @@ images/shuju_2
   index: -1
 images/shuju_3
   rotate: false
-  xy: 292, 160
+  xy: 1494, 1796
   size: 270, 66
   orig: 270, 66
   offset: 0, 0
   index: -1
 images/shuju_4
   rotate: false
-  xy: 254, 32
+  xy: 254, 30
   size: 264, 54
   orig: 264, 54
   offset: 0, 0
   index: -1
 images/shuju_5
   rotate: false
-  xy: 1494, 1794
+  xy: 254, 86
   size: 270, 68
   orig: 270, 68
   offset: 0, 0
