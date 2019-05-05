@@ -4,429 +4,170 @@ size: 2048,2048
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-1
-  rotate: false
-  xy: 1706, 1724
-  size: 36, 36
-  orig: 36, 36
-  offset: 0, 0
-  index: -1
-10
-  rotate: false
-  xy: 2021, 1302
-  size: 25, 25
-  orig: 25, 25
-  offset: 0, 0
-  index: -1
-11
-  rotate: false
-  xy: 2021, 1275
-  size: 25, 25
-  orig: 25, 25
-  offset: 0, 0
-  index: -1
-12
-  rotate: false
-  xy: 1694, 652
-  size: 25, 25
-  orig: 25, 25
-  offset: 0, 0
-  index: -1
-13
-  rotate: false
-  xy: 1590, 410
-  size: 25, 25
-  orig: 25, 25
-  offset: 0, 0
-  index: -1
-14
-  rotate: false
-  xy: 1622, 449
-  size: 25, 25
-  orig: 25, 25
-  offset: 0, 0
-  index: -1
-15
-  rotate: false
-  xy: 1969, 1020
-  size: 25, 25
-  orig: 25, 25
-  offset: 0, 0
-  index: -1
-16
-  rotate: false
-  xy: 2000, 1059
-  size: 25, 25
-  orig: 25, 25
-  offset: 0, 0
-  index: -1
-17
-  rotate: false
-  xy: 1954, 1769
-  size: 25, 25
-  orig: 25, 25
-  offset: 0, 0
-  index: -1
-2
-  rotate: false
-  xy: 1775, 1735
-  size: 25, 25
-  orig: 25, 25
-  offset: 0, 0
-  index: -1
-3
-  rotate: false
-  xy: 1473, 336
-  size: 25, 25
-  orig: 25, 25
-  offset: 0, 0
-  index: -1
-4
-  rotate: false
-  xy: 1490, 839
-  size: 25, 25
-  orig: 25, 25
-  offset: 0, 0
-  index: -1
-5
-  rotate: false
-  xy: 1722, 712
-  size: 25, 25
-  orig: 25, 25
-  offset: 0, 0
-  index: -1
-6
-  rotate: false
-  xy: 1989, 1263
-  size: 25, 25
-  orig: 25, 25
-  offset: 0, 0
-  index: -1
-7
-  rotate: false
-  xy: 1694, 625
-  size: 25, 25
-  orig: 25, 25
-  offset: 0, 0
-  index: -1
-8
-  rotate: false
-  xy: 1590, 383
-  size: 25, 25
-  orig: 25, 25
-  offset: 0, 0
-  index: -1
-9
-  rotate: false
-  xy: 1969, 993
-  size: 25, 25
-  orig: 25, 25
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00001
-  rotate: false
-  xy: 1969, 1047
-  size: 29, 37
-  orig: 29, 37
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00003
-  rotate: true
-  xy: 1915, 1765
-  size: 29, 37
-  orig: 29, 37
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00005
-  rotate: true
-  xy: 1666, 1984
-  size: 29, 38
-  orig: 29, 38
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00007
-  rotate: false
-  xy: 1722, 739
-  size: 29, 34
-  orig: 29, 34
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00009
-  rotate: true
-  xy: 635, 1058
-  size: 29, 35
-  orig: 29, 35
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00011
-  rotate: true
-  xy: 1435, 333
-  size: 28, 36
-  orig: 28, 36
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00013
-  rotate: false
-  xy: 1744, 1724
-  size: 29, 36
-  orig: 29, 36
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00015
-  rotate: true
-  xy: 635, 1027
-  size: 29, 35
-  orig: 29, 35
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00017
-  rotate: true
-  xy: 635, 1089
-  size: 31, 35
-  orig: 31, 35
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00019
-  rotate: false
-  xy: 1722, 775
-  size: 31, 36
-  orig: 31, 36
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00021
-  rotate: true
-  xy: 1156, 783
-  size: 31, 37
-  orig: 31, 37
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00023
-  rotate: true
-  xy: 1666, 2015
-  size: 31, 38
-  orig: 31, 38
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00025
-  rotate: true
-  xy: 1875, 1762
-  size: 32, 38
-  orig: 32, 38
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00027
-  rotate: false
-  xy: 1340, 285
-  size: 31, 39
-  orig: 31, 39
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00029
-  rotate: true
-  xy: 1394, 330
-  size: 31, 39
-  orig: 31, 39
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00031
-  rotate: false
-  xy: 1428, 825
-  size: 30, 39
-  orig: 30, 39
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00033
-  rotate: true
-  xy: 1156, 751
-  size: 30, 37
-  orig: 30, 37
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00035
-  rotate: false
-  xy: 1590, 437
-  size: 30, 37
-  orig: 30, 37
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00037
-  rotate: false
-  xy: 1989, 1290
-  size: 30, 37
-  orig: 30, 37
-  offset: 0, 0
-  index: -1
-Fire 022 Up Loop_00039
-  rotate: false
-  xy: 1460, 828
-  size: 28, 36
-  orig: 28, 36
-  offset: 0, 0
-  index: -1
 Sparks 061 Ray up loop_00000
   rotate: false
-  xy: 832, 250
+  xy: 818, 903
   size: 184, 245
   orig: 184, 245
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00001
   rotate: false
-  xy: 753, 5
+  xy: 1004, 915
   size: 188, 243
   orig: 188, 243
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00002
   rotate: true
-  xy: 672, 1001
+  xy: 1138, 1856
   size: 190, 250
   orig: 190, 250
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00003
   rotate: true
-  xy: 924, 1001
+  xy: 1390, 1856
   size: 190, 250
   orig: 190, 250
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00004
-  rotate: false
-  xy: 833, 749
+  rotate: true
+  xy: 1642, 1854
   size: 192, 250
   orig: 192, 250
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00005
-  rotate: false
-  xy: 635, 497
+  rotate: true
+  xy: 1126, 1659
   size: 195, 250
   orig: 195, 250
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00006
   rotate: false
-  xy: 635, 749
+  xy: 921, 1446
   size: 196, 250
   orig: 196, 250
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00007
   rotate: false
-  xy: 1390, 583
+  xy: 635, 133
   size: 196, 231
   orig: 196, 231
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00008
   rotate: false
-  xy: 556, 4
+  xy: 1434, 709
   size: 195, 225
   orig: 195, 225
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00009
-  rotate: false
-  xy: 635, 256
+  rotate: true
+  xy: 1378, 1659
   size: 195, 239
   orig: 195, 239
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00010
   rotate: false
-  xy: 1018, 259
+  xy: 1194, 936
   size: 194, 236
   orig: 194, 236
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00011
   rotate: false
-  xy: 1394, 363
+  xy: 1630, 1290
   size: 194, 218
   orig: 194, 218
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00012
   rotate: false
-  xy: 1195, 578
+  xy: 1390, 936
   size: 193, 236
   orig: 193, 236
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00013
-  rotate: false
-  xy: 1434, 1188
+  rotate: true
+  xy: 1619, 1510
   size: 158, 226
   orig: 158, 226
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00014
   rotate: false
-  xy: 1875, 1796
+  xy: 1287, 1174
   size: 157, 250
   orig: 157, 250
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00015
   rotate: false
-  xy: 832, 497
+  xy: 1103, 1174
   size: 182, 250
   orig: 182, 250
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00016
   rotate: true
-  xy: 1176, 999
+  xy: 1619, 1670
   size: 182, 250
   orig: 182, 250
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00017
   rotate: false
-  xy: 1659, 1451
+  xy: 1446, 1202
   size: 182, 250
   orig: 182, 250
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00018
-  rotate: true
-  xy: 1176, 816
+  rotate: false
+  xy: 635, 870
   size: 181, 250
   orig: 181, 250
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00019
-  rotate: false
-  xy: 943, 10
+  rotate: true
+  xy: 1194, 754
   size: 180, 238
   orig: 180, 238
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00020
   rotate: false
-  xy: 1125, 23
+  xy: 1585, 966
   size: 179, 234
   orig: 179, 234
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00021
   rotate: false
-  xy: 1306, 27
+  xy: 1631, 734
   size: 178, 230
   orig: 178, 230
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00022
   rotate: false
-  xy: 1016, 497
+  xy: 635, 366
   size: 177, 250
   orig: 177, 250
   offset: 0, 0
   index: -1
 Sparks 061 Ray up loop_00023
   rotate: false
-  xy: 1214, 326
+  xy: 635, 618
   size: 178, 250
   orig: 178, 250
   offset: 0, 0
@@ -440,56 +181,56 @@ anshazhen
   index: -1
 beishanzhen
   rotate: false
-  xy: 1449, 1432
+  xy: 916, 1698
   size: 208, 269
   orig: 208, 269
   offset: 0, 0
   index: -1
 bj1
   rotate: false
-  xy: 1027, 857
+  xy: 814, 382
   size: 147, 142
   orig: 147, 142
   offset: 0, 0
   index: -1
 bj2
   rotate: false
-  xy: 1200, 1183
+  xy: 1119, 1426
   size: 232, 231
   orig: 232, 231
   offset: 0, 0
   index: -1
 bj3
   rotate: false
-  xy: 1588, 679
+  xy: 833, 248
   size: 132, 132
   orig: 132, 132
   offset: 0, 0
   index: -1
 bj4
   rotate: false
-  xy: 1843, 1329
+  xy: 818, 705
   size: 197, 196
   orig: 197, 196
   offset: 0, 0
   index: -1
 bj5
   rotate: false
-  xy: 1428, 866
+  xy: 1021, 526
   size: 192, 192
   orig: 192, 192
   offset: 0, 0
   index: -1
 changlongjiedao
-  rotate: true
-  xy: 1590, 476
+  rotate: false
+  xy: 1073, 305
   size: 105, 82
   orig: 105, 82
   offset: 0, 0
   index: -1
 chunhuazhen
   rotate: false
-  xy: 1706, 1762
+  xy: 934, 1160
   size: 167, 284
   orig: 167, 284
   offset: 0, 0
@@ -502,36 +243,36 @@ ditu
   offset: 0, 0
   index: -1
 fulinzhen
-  rotate: true
-  xy: 1774, 986
+  rotate: false
+  xy: 1017, 720
   size: 162, 193
   orig: 162, 193
   offset: 0, 0
   index: -1
 gaoqiaozhen
   rotate: true
-  xy: 1594, 1213
+  xy: 1826, 1291
   size: 217, 187
   orig: 217, 187
   offset: 0, 0
   index: -1
 guang
   rotate: false
-  xy: 1200, 1969
+  xy: 672, 1969
   size: 464, 77
   orig: 464, 77
   offset: 0, 0
   index: -1
 guoyuanzhen
-  rotate: true
-  xy: 1594, 1060
+  rotate: false
+  xy: 1894, 1868
   size: 151, 178
   orig: 151, 178
   offset: 0, 0
   index: -1
 huanghuazhen
   rotate: false
-  xy: 1200, 1684
+  xy: 672, 1684
   size: 242, 283
   orig: 242, 283
   offset: 0, 0
@@ -545,51 +286,44 @@ huangxingzhen
   index: -1
 jiangbei
   rotate: true
-  xy: 1969, 1086
+  xy: 556, 167
   size: 62, 77
   orig: 62, 77
   offset: 0, 0
   index: -1
 jiangbeizhen
   rotate: true
-  xy: 1444, 1703
+  xy: 672, 1150
   size: 264, 260
   orig: 264, 260
   offset: 0, 0
   index: -1
 jinjingzhen
   rotate: true
-  xy: 1200, 1416
+  xy: 672, 1416
   size: 266, 247
   orig: 266, 247
   offset: 0, 0
   index: -1
 kaihuizhen
-  rotate: true
-  xy: 1843, 1527
+  rotate: false
+  xy: 1353, 1454
   size: 233, 203
   orig: 233, 203
   offset: 0, 0
   index: -1
 langlijiedao
-  rotate: true
-  xy: 1622, 813
+  rotate: false
+  xy: 1103, 389
   size: 110, 135
   orig: 110, 135
   offset: 0, 0
   index: -1
 lukouzhen
   rotate: false
-  xy: 1783, 1150
+  xy: 815, 526
   size: 204, 177
   orig: 204, 177
-  offset: 0, 0
-  index: -1
-neirong1
-  rotate: false
-  xy: 672, 1193
-  size: 526, 853
-  orig: 526, 853
   offset: 0, 0
   index: -1
 neirong2
@@ -601,28 +335,35 @@ neirong2
   index: -1
 qingshanpuzhen
   rotate: false
-  xy: 1622, 925
+  xy: 963, 391
   size: 138, 133
   orig: 138, 133
   offset: 0, 0
   index: -1
 quantangjiedao
   rotate: false
-  xy: 1214, 259
+  xy: 1630, 1223
   size: 124, 65
   orig: 124, 65
   offset: 0, 0
   index: -1
 xianglongjiedao
   rotate: true
-  xy: 1027, 754
+  xy: 833, 145
   size: 101, 127
   orig: 101, 127
   offset: 0, 0
   index: -1
+xing
+  rotate: false
+  xy: 1181, 720
+  size: 33, 32
+  orig: 33, 32
+  offset: 0, 0
+  index: -1
 xingshajiedao
   rotate: false
-  xy: 1588, 583
+  xy: 967, 295
   size: 104, 94
   orig: 104, 94
   offset: 0, 0

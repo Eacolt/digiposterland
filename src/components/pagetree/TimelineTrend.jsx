@@ -1,5 +1,5 @@
 import './TimelineTrend.less'
-import Power0 from 'gsap'
+import Power0, { TweenMax } from 'gsap'
  
  
 class Bands extends React.Component{
@@ -14,71 +14,158 @@ class Bands extends React.Component{
         }
     }
     componentWillReceiveProps(nextProps){
-        if(nextProps.freshRender !== this.props.freshRender){
-            this.setState({
-                movedY:0,
-            
-                circleX:0,
-            
+        let self = this;
+        if(nextProps.freshRender === true && self.props.freshRender !== nextProps.freshRender){
+   
+
+            let newState = Object.create(null);
+            newState.opacity = 0;
+            newState.movedY = 0;
+            newState.circleOpa = 0;
+      
+            self.setState({
+                opacity:newState.opacity,
+                movedY:newState.movedY,
+                
+                circleOpa:newState.circleOpa
             })
-            if(this.tl){
-                this.tl.pause(0)
-                this.tl.restart();
+            if(self.props.moveDir === 0){
+                gsap.TweenMax.to(newState,1,{
+                    opacity:1,
+             
+                    onUpdate:()=>{
+                      
+                        self.setState({
+                            opacity:newState.opacity,
+                   
+    
+                        })
+                    }
+                })
+
+            }else{
+                if(self.props.moveDir%2 === 0){
+
+                    gsap.TweenMax.to(newState,1,{
+                        opacity:1,
+                        movedY:-0.5,
+                        circleOpa:1,
+                        onUpdate:()=>{
+                          
+                            self.setState({
+                                opacity:newState.opacity,
+                                movedY:newState.movedY,
+                                circleOpa:newState.circleOpa
+        
+                            })
+                        }
+                    })
+                }else{
+                    gsap.TweenMax.to(newState,1,{
+                        opacity:1,
+                        movedY:0.45,
+                        circleOpa:1,
+                        onUpdate:()=>{
+                          
+                            self.setState({
+                                opacity:newState.opacity,
+                                movedY:newState.movedY,
+                                circleOpa:newState.circleOpa
+        
+                            })
+                        }
+                    })
+
+                }
+               
+
             }
+         
+           
+            
+         
+  
+        } 
+        if(nextProps.freshRender === false ){
+            let newState = Object.create(null);
+            newState.opacity = 0;
+            newState.movedY = 0;
+            newState.circleOpa = 0;
+            self.setState({
+                opacity:newState.opacity,
+                movedY:newState.movedY,
+                circleOpa:newState.circleOpa
+            })
         }
     }
     componentDidMount(){
         this.tl = new gsap.TimelineMax();
         var self = this;
+     
+
+        self.setState({
+            opacity:0
+        })
+        // if(self.props.moveDir ===1){
+        //     self.setState({
+        //         movedY:0.2
+        //     })
+
+        // }
       //  console.log('moveDir=============>',this.props.moveDir)
-      let _state = Object.create(this.state);
-      if(this.props.moveDir===0){
-          self.setState({
-              opacity:1,
-              circleOpa:0,
+    //   let _state = Object.create(this.state);
+    //   let delayTime = this.props.moveDir;
+    //   if(this.props.moveDir===0){
+    //       self.setState({
+    //           opacity:0,
+    //           circleOpa:0,
 
-          })
-          return;
-      }
-        if(this.props.moveDir%2===0){
+    //       })
+    //       this.tl.add(gsap.TweenMax.set(_state,{
+    //             opacity:1,
+    //         }),0);
+    //         console.log('fuck')
+    //       return;
+    //   }
+    //     if(this.props.moveDir%2===0){
           
-            this.tl.add(gsap.TweenMax.set(_state,{
-                movedY:-0.2
-            }));
-            this.tl.add(gsap.TweenMax.to(_state ,1,{
-                opacity:1,
-                circleOpa:1,
+    //         this.tl.add(gsap.TweenMax.set(_state,{
+    //             movedY:-0.2
+    //         }),delayTime);
+    //         this.tl.add(gsap.TweenMax.to(_state ,1,{
+    //             opacity:1,
+    //             circleOpa:1,
 
 
-                movedY:-0.4,
-                onUpdate:()=>{
-                    self.setState({
-                        movedY:_state.movedY,
-                        opacity:_state.opacity,
-                        circleOpa:_state.circleOpa
-                    })
-                }
-            }),);
+    //             movedY:-0.4,
+    //             onUpdate:()=>{
+    //                 self.setState({
+    //                     movedY:_state.movedY,
+    //                     opacity:_state.opacity,
+    //                     circleOpa:_state.circleOpa
+    //                 })
+    //             }
+    //         }),delayTime);
           
 
-        }else{
-            this.tl.add(gsap.TweenMax.set(_state,{
-                movedY:0.2,
+    //     }else{
+    //         this.tl.add(gsap.TweenMax.set(_state,{
+    //             movedY:0.2,
 
-            }))
-            this.tl.add(gsap.TweenMax.to(_state ,1,{
-                opacity:1,
-                movedY:0.4,
-                circleOpa:1,
-                onUpdate:()=>{
-                    self.setState({
-                        movedY:_state.movedY,
-                        opacity:_state.opacity,
-                        circleOpa:_state.circleOpa
-                    })
-                }
-            }));
-        }
+    //         }),delayTime)
+    //         this.tl.add(gsap.TweenMax.to(_state ,1,{
+    //             opacity:1,
+    //             movedY:0.4,
+    //             circleOpa:1,
+    //             onUpdate:()=>{
+    //                 self.setState({
+    //                     movedY:_state.movedY,
+    //                     opacity:_state.opacity,
+    //                     circleOpa:_state.circleOpa
+    //                 })
+    //             }
+    //         }),delayTime);
+    //     }
     }
     render(){
         return(
@@ -91,6 +178,11 @@ class Bands extends React.Component{
 }
 
 const TimerBox = (props)=>{
+    var allTime = 300;
+    var minutes,seconds,hours;
+    if(allTime/(24*60) < 1){
+        hours = allTime/(24*60)
+    }
     return(
         <div className='TimerBox'>
             <div className='HH'>1</div>
@@ -116,14 +208,7 @@ class TimelineTrend extends React.Component{
  
         
     }
-
-    componentDidMount(){
-        var self = this;
-      
-      
-        
-
-    }
+ 
     componentWillReceiveProps(nextProps,state){
  
        var self = this;
@@ -131,29 +216,20 @@ class TimelineTrend extends React.Component{
        if(nextProps.freshRender !== this.props.freshRender){
            console.log('时间轴更新了!!!')
            if(   self.tl ){
-            self.tl.pause(0)
+            // self.tl.pause(0)
+           // self.tl.restart();
            }
-            let mystate = {
-                lineMax:this.state.lineMax
-            }
-        
-            let tween1 = gsap.TweenMax.to(mystate,4,{
-                lineMax:self.props.fontSize*4,
-                delay:0.8,
-                onUpdate:()=>{
-                 
-                    self.setState({
-                        lineMax:mystate.lineMax
-                    })
-                },
-                ease:Power0.easeIn
-            });
-            if(self.tl == undefined){
-                self.tl = new gsap.TimelineMax({repeat:0});
-                self.tl.add(tween1);
-            }
+           let newState = Object.create(null);
+           newState.lineMax = 0;
+           gsap.TweenMax.to(newState,4,{
+               lineMax:self.props.fontSize*4,
+               onUpdate:()=>{
+                   self.setState({
+                       lineMax:newState.lineMax
+                   })
+               }
+           })
 
-            self.tl.restart();
             
      
        }
@@ -168,6 +244,10 @@ class TimelineTrend extends React.Component{
    
 
         
+    }
+    
+    componentDidMount(){
+      
     }
     componentDidUpdate(){
 
@@ -185,7 +265,7 @@ class TimelineTrend extends React.Component{
             <g className='gg'  transform={`translate(${0.45*this.props.fontSize},${2.16*this.props.fontSize})`}>
             {this.props.bandList.map((item,idx)=>{
                 return (
-                    <Bands freshRender={this.props.freshRender}  imgName={item.imgName} fontSize={this.props.fontSize} moveDir={idx} x={item.x*this.props.fontSize}   key={idx}/>
+                    <Bands freshRender={item.freshRender}   ref={'band'+idx} imgName={item.imgName} fontSize={this.props.fontSize} moveDir={idx} x={item.x*this.props.fontSize}   key={idx}/>
                 )
             })}
  
@@ -206,6 +286,7 @@ TimelineTrend.defaultProps = {
 }
 Bands.defaultProps = {
     fontSize:12,
-    circleX:100
+    circleX:100,
+    freshRender:false
 }
 export default TimelineTrend;

@@ -24,6 +24,8 @@ class Index extends React.Component {
 		super(props)
 		this.myChart = null;
 		this.chartOption = null;
+
+		this.timelineTl = null;
 		this.state = {
 			whitchPressCount:0,//第几个渠道
 			fontSize:12,
@@ -97,12 +99,10 @@ class Index extends React.Component {
 		   myspine.state.setAnimation(0,'animation',true)
 		   setTimeout(()=>{
 	     	self.playTree();
-		   },2000)
+		   },0)
 		   myspine.state.addListener({
 			   complete:function(){
-				setTimeout(()=>{
-					self.playTree();
-				  },2000)
+				self.playTree();
 			   }
 		   })
 		 
@@ -154,7 +154,8 @@ class Index extends React.Component {
 					freshRender:!self.state.freshRender,
 				
 				});
-			},8000)
+				self.timelineTl.restart();
+			},13000)
 
 				self.playTimeline();
 	
@@ -213,25 +214,82 @@ class Index extends React.Component {
 
 	playTimeline(){
 		var i =0,self = this;
-		var kuais = ['kuai1','kuai2','kuai3','kuai4']
-		while(i<4){
+		var kuais = ['kuai1','kuai2','kuai3','kuai4'].map((item,index)=>{
+			return {
+				x:index*1.4,
+				imgName:item,
+				freshRender:false
+			}
+		})
+		self.setState({
+			timelineList:kuais
+		})
+		// setInterval(()=>{
+		// 	let newArr = self.state.timelineList.slice(0);
+		// 	newArr[0].freshRender = !newArr[1].freshRender
+		// 	console.log('....',newArr[1].freshRender)
+		// 	self.setState({
+		// 		timelineList:newArr
+		// 	})
+		// },1100)
+		let newArr = self.state.timelineList.slice(0);
+	 
+		this.timelineTl = new gsap.TimelineMax();
 	
-			(function(i){
-				setTimeout(()=>{
-					console.log('get out!');
-					let newArr = self.state.timelineList.slice(0);
-					newArr.push({
-						x:(i)*1.4,
-						imgName:kuais[i]
+		this.timelineTl.add(function(){
+		 
+				newArr.forEach((item)=>{
+					item.freshRender = false;
+				})
+			self.setState({
+				timelineList:newArr
+			})
+		},0)
+ 
+		this.timelineTl.add(function(){
+			newArr[0].freshRender = true
+			self.setState({
+				timelineList:newArr
+			})
+		},0.1)
+		this.timelineTl.add(function(){
+			newArr[1].freshRender = true
+			self.setState({
+				timelineList:newArr
+			})
+		},'+=1');
+		this.timelineTl.add(function(){
+			newArr[2].freshRender = true
+			self.setState({
+				timelineList:newArr
+			})
+		},'+=1');
+		this.timelineTl.add(function(){
+			newArr[3].freshRender = true
+			self.setState({
+				timelineList:newArr
+			})
+		},'+=1')
+
+
+		// while(i<4){
+	
+		// 	(function(i){
+		// 		setTimeout(()=>{
+		// 			console.log('get out!');
+		// 			let newArr = self.state.timelineList.slice(0);
+		// 			newArr.push({
+		// 				x:(i)*1.4,
+		// 				imgName:kuais[i]
 					 
-					})
-					self.setState({
-						timelineList:newArr
-					})
-				},i*1000)
-			}(i));
-			i++;
-		}
+		// 			})
+		// 			self.setState({
+		// 				timelineList:newArr
+		// 			})
+		// 		},i*1000)
+		// 	}(i));
+		// 	i++;
+		// }
 		
 	}
 	componentDidUpdate(){

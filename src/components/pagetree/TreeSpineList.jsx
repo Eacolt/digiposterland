@@ -34,7 +34,7 @@ class TreeSpineList extends React.Component{
                 newarr.forEach((item)=>{
                     item.opacity = 0;
                 })
-            },1)
+            },2.55)
             this.tl.add(delay.bind(this,4),'+=0')
             this.tl.add(delay.bind(this,3),'+=0.7')
             this.tl.add(delay.bind(this,2),'+=0.7')

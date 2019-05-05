@@ -6,6 +6,15 @@
     top:0px;
     background:url(../../img/bg_1.jpg) no-repeat;
     background-size: contain;
+    .rightBands{
+        position: absolute;
+        width:5.26rem;
+        height:8.53rem;
+        border:1px solid red;
+        right:0.36rem;
+        top:1.46rem;
+        background:url(../../img/rightband.png) no-repeat;
+    }
     .pixicanvas{
         position: absolute;
         width: 100%;
@@ -17,9 +26,9 @@
  
     .leftData{
         position: absolute;
-        left:1.25rem;
+        left:0.75rem;
         top:2.82rem;
-        width:5.3rem;
+        width:5.5rem;
         height:auto;
  
     }
@@ -40,44 +49,78 @@
         font-size:0.18rem;
         height:0.39rem;
     }
+   
     .leftData li div{
         position: relative;
         display:flex;
         justify-content: center;
         flex-direction: row;
+      
  
     }
 
     .rightData{
         position: absolute;
-        width:4.5rem;
-        height:auto;
-        top:1rem;
-        right:0.4rem;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        width:5.26rem;
+        height:8.53rem;
     
-        top:2.3rem;
-        color:white;
+        right:0.36rem;
+        top:1.46rem;
+        background:url(../../img/rightband.png) no-repeat;
+        padding-top:0.8rem;
+        box-sizing: border-box;
         li{
             position: relative;
-            display:flex;
-            flex-direction: column;
-            height:1.2rem;
+       
+            // display:flex;
+            // flex-direction: column;
+            height:0.77rem;
+            color:white;
       
-            width:100%;
-            margin-bottom:0.7rem;
+            width:4.32rem;
+            margin-bottom:0.4rem;
             font-size:0.23rem;
+     
+            background:url(../../img/rightbars.png) no-repeat;
+            background-size: contain;
 
-            div{
+            div.uppon{
                 position:relative;
-                display:flex;
-                flex-direction:row;
-                flex-wrap: wrap;
-      
-                font-size:0.21rem;
-                height:0.8rem;
-                align-items: center;
+                display: -webkit-box;
+                display:-moz-box;
+                -webkit-box-orient: vertical;
+                -moz-box-orient: vertical;
+                -webkit-box-pack: center;
+                -moz-box-pack: center;
+               
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size:0.2rem;
+                height:0.6rem;
+                width:3.8rem;
+                padding-left: 0.1rem;
+        
             }
+            div.bottom{
+                 
+                margin-top:0.1rem;
+                font-size:0.16rem;
+                padding-left: 0.1rem;
+                width: 4.3rem;
+                text-overflow: ellipsis;
+                overflow:hidden;
+                white-space:nowrap; 
+            }
+
+    
+
+
         }
+     
     }
 }
  

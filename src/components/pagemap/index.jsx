@@ -68,6 +68,7 @@ class Index extends React.Component{
                     // "provincialMedia": 2367,
                     // "countyMedia": 612,
                     // "keyWord": "果园镇"
+                 
                     self.contentJson = content.data.data;
                     self.rankingJson = ranking.data.data;
                     console.log(self.rankingJson);
@@ -85,6 +86,7 @@ class Index extends React.Component{
                            contentList:self.contentJson.slice(0,4),
                        }
                    });
+                   myspine.state.setAnimation(0,'animation2',true)
                    self.lightMapAt(self.state.rankingList[self.state.mapIndex].keyWord,myspine)
 
                
@@ -93,18 +95,21 @@ class Index extends React.Component{
                    setInterval(()=>{
                        
                        self.setState((prestate)=>{
+                            let newList = self.contentJson.slice(0);
                      
-                  
+                              
                        
                             let d = prestate.mapIndex >= 16 ? 0 : prestate.mapIndex+1
-                            let last = d+4>14 ? self.contentJson.length :d+4
+                   
+                            let last = d+4>14 ? self.contentJson.length : d+4
+                         
                            return {
                                mapIndex:d,
-                            //    contentList:self.contentJson.slice(d,last),
+                               contentList:newList.slice(d,d+4),
                            }
                        });
                        self.lightMapAt(self.state.rankingList[self.state.mapIndex].keyWord,myspine)
-                   },3000)
+                   },4000)
 
 
                 })
@@ -199,23 +204,50 @@ class Index extends React.Component{
             break;
         }
         myspine.skeleton.setSkinByName(an_name);
-        myspine.skeleton.setSlotsToSetupPose();
-        myspine.state.setAnimation(0,'animation2',true)
+       // myspine.skeleton.setSlotsToSetupPose();
+    //    myspine.state.setAnimation(0,'animation2',true)
     }
  
     render(){
+        var arrangeList = this.state.rankingList.map((item,index)=>{
+            let n = 'rank3.png';
+      
+            switch(index){
+                case 0:
+                n = 'rank1.gif'
+                break;
+
+                case 1:
+                n = 'rank2.png'
+                break;
+
+                case 2:
+                n = 'rank3.png'
+                break;
+ 
+                default:
+                n = 'rank'+(index+1)+'.png'
+                break;
+            }
+            return Object.assign(item,{
+                pic:n
+            })
+        })
         return(
             <div className='Pagemap'>
                 <div ref='pixicanvas' className='pixicanvas'></div>
+
+                
                 <ul className='leftData'>
                 {
-                    this.state.rankingList.map((item,index)=>{
+                    arrangeList.map((item,index)=>{
                         return(
                             <li key={index} style={{color:index===this.state.mapIndex? 'gold ':'white'}}>
-                            <div style={{width:'1.2rem'}}>{item.keyWord}</div>
-                            <div style={{width:'0.8rem'}}>{item.forwardCount}</div>
-                            <div style={{width:'0.73rem'}}>{item.centralMedia}</div>
-                            <div style={{width:'0.76rem'}}>{item.provincialMedia}</div>
+                            <div style={{width:'0.25rem'}}><img src={require('../../img/'+item.pic+'')}  width='100%' height='100%'/></div>
+                            <div style={{width:'1.3rem',paddingLeft:'0.2rem'}}>{item.keyWord}</div>
+                            <div style={{width:'1rem'}}>{item.forwardCount}</div>
+                            <div style={{width:'0.82rem'}}>{item.centralMedia}</div>
+                            <div style={{width:'1rem'}}>{item.provincialMedia}</div>
                             <div style={{width:'0.75rem'}}>{item.countyMedia}</div>
                             <div style={{width:'0.8rem'}}>{item.count}</div>
                            </li>
@@ -226,13 +258,15 @@ class Index extends React.Component{
                    
                     
                 </ul>
+               
                 <ul className='rightData'>
                 {
                    this.state.contentList.map((item,index)=>{
                         return (
-                            <li key={index}>
-                            <div dangerouslySetInnerHTML={{__html:item.title}}></div>
-                            <div style={{fontSize:'0.2rem'}}><span>{item.source}</span> <span >{item.pubdate}</span></div>
+                            <li className='lists' key={index}>
+                            <div className='uppon'   dangerouslySetInnerHTML={{__html:item.title}}></div>
+                            <div className='bottom'>{item.source}&nbsp;{item.pubdate}</div>
+                            {/* <div style={{fontSize:'0.2rem'}}><span>{item.source}</span> <span >{item.pubdate}</span></div> */}
                         </li>
                         )
                     })

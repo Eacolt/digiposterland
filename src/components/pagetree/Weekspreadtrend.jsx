@@ -36,27 +36,32 @@ class Weekspreadtrend extends React.Component{
                 let _name;
                 switch(item[0]){
                     case 'forwardCount':
-                    _name = '转载数';
+                    _name = ['转载数','#44F0FFFF'];
                     break;
                     case 'forwardMediaCount':
-                    _name = '媒体转载数';
+                    _name = ['媒体转载数','#ECB100FF'];
                     break;
                     default:
                     break;
 
                 }
                 xAxisData.push({
-                    name:_name,
+                    name:_name[0],
                     icon:'roundRect'
                 })
                 
                 return {
-                    name:_name,
+                    name:_name[0],
                     type:'line',
           
-                    areaStyle: {},
+                    areaStyle: {
+                        opacity:0.25
+                    },
                     data:item[1],
-                    smooth:true
+                    smooth:true,
+                    itemStyle:{
+                        color:_name[1]
+                    },
                 }
             })
          

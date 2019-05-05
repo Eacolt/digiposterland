@@ -16,7 +16,7 @@ class PressDistributePie extends React.Component{
         }
     }
     componentWillUpdate(nextProps){
-  
+        let self = this;
         if(nextProps.freshRender !== this.props.freshRender){
             this.setState({
                 visibility:true
@@ -50,6 +50,23 @@ class PressDistributePie extends React.Component{
             })
             this.myOption.legend.data = legendNames;
             this.myOption.series.data = pressTypes;
+
+
+            this.myOption.legend.formatter =  function(name){
+ 
+                let mount = 0,idx = 0;
+                for(let i=0;i<self.myOption.series.data.length;i++){
+                    mount+=Number(self.myOption.series.data[i].value)
+                }
+                self.myOption.series.data.forEach((item,index)=>{
+                    if(item.name === name){
+                        idx = index;
+                    }
+                })
+                return name+'  '+ (self.myOption.series.data[idx].value/mount*100).toFixed(2)+'%';
+            }
+
+
    
    
             this.myChart.setOption(this.myOption)
@@ -92,7 +109,7 @@ class PressDistributePie extends React.Component{
             series : {
                     name: '访问来源',
                     type: 'pie',
-                    radius : [30,60],
+                    radius : ['15%','54%'],
                     center: ['30%', '50%'],
                     data:[
                         {value:335, name:'直接访问'},
@@ -101,14 +118,15 @@ class PressDistributePie extends React.Component{
                         {value:135, name:'视频广告'},
                         {value:1548, name:'搜索引擎'}
                     ],
+                    roseType:'radius',
                     
                     labelLine:false,
                     label:false,
                     itemStyle: {
                         emphasis: {
                             shadowBlur: 10,
-                            shadowOffsetX: 0,
-                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            shadowOffsetX: 10,
+                            shadowColor: 'rgba(0, 0, 0, 0.8)'
                         }
                     }
                 }

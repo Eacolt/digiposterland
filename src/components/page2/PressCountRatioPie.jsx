@@ -37,7 +37,26 @@ class PressCountRatioPie extends React.Component{
     });
  
     self.chartOption.series[0].data=seriresData.sort(function (a, b) { return a.value - b.value; });
-    self.chartOption.legend.data=seriesLegend;
+     self.chartOption.legend.data=seriesLegend;
+     self.chartOption.legend.formatter=function(name){
+ 
+        let mount = 0,idx = 0;
+        for(let i=0;i<self.chartOption.series[0].data.length;i++){
+            mount+=Number(self.chartOption.series[0].data[i].value)
+        }
+        self.chartOption.series[0].data.forEach((item,index)=>{
+            if(item.name === name){
+                idx = index;
+            }
+        })
+        return name+'  '+ (self.chartOption.series[0].data[idx].value/mount*100).toFixed(2)+'%';
+    }
+  
+
+
+
+
+    
      this.myChart.setOption(self.chartOption)
        if(nextprops.freshRender !== this.props.freshRender){
       
@@ -83,7 +102,7 @@ class PressCountRatioPie extends React.Component{
            },
            legend: {
             orient: 'vertical',
-            x: '70%',
+            x: '60%',
             y:'middle',
             textStyle:{
                 color:'#fff'
@@ -96,11 +115,19 @@ class PressCountRatioPie extends React.Component{
                    name:'访问来源',
                    type:'pie',
                    radius : ['15%','50%'],
-                   center: ['40%', '50%'],
+                   center: ['34%', '50%'],
                    data:seriresData.sort(function (a, b) { return a.value - b.value; }),
-         
+                   roseType:'radius',
                    label: false,
                    labelLine:false,
+                   visualMap: {
+                    show: false,
+                    min: 80,
+                    max: 600,
+                    inRange: {
+                        colorLightness: [0, 1]
+                    }
+                },
                    itemStyle: {
      
                        
@@ -115,11 +142,11 @@ class PressCountRatioPie extends React.Component{
                     
                    },
        
-                   // animationType: 'scale',
-                   // animationEasing: 'elasticOut',
-                   // animationDelay: function (idx) {
-                   //     return Math.random() * 200;
-                   // }
+                   animationType: 'scale',
+                   animationEasing: 'elasticOut',
+                   animationDelay: function (idx) {
+                       return Math.random() * 200;
+                   }
                }
            ]
        };
