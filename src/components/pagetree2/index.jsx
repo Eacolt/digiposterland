@@ -38,6 +38,7 @@ class Index extends React.Component {
  
 			freshRender:false,
 			treefreshRender:false,
+			forwardFreshRender:false,
 			timelineList:[]//{x:4}
 
 
@@ -154,7 +155,12 @@ class Index extends React.Component {
 				
 				});
 				self.timelineTl.restart();
-			},common.freshTime)
+			},common.freshTime);
+			setInterval(()=>{
+				self.setState({
+					forwardFreshRender:!self.state.forwardFreshRender
+				})
+			},common.freshTime/5)
 
 				self.playTimeline();
 	
@@ -320,7 +326,7 @@ class Index extends React.Component {
 		       <Weekspreadtrend timestamp={this.state.weekspreadtrend.timestamp} series={this.state.weekspreadtrend.series} freshRender={this.state.freshRender}/>
               {/* <TimelineTrend freshRender={this.state.freshRender} bandList={this.state.timelineList} fontSize={this.state.fontSize}/> */}
 			  <PressDistributePie freshRender={this.state.freshRender} pressTypes={this.state.reportlist[0]}/>
-			  <ForwardMediaCount/>
+			  <ForwardMediaCount freshRender={this.state.forwardFreshRender} lists={this.state.reportlist}/>
 			  <HotRanking series={this.state.reprinthottop} />
 			  {
 				  reprintNews && <TreeSpineList freshRender={this.state.treefreshRender} series={reprintNews}/>

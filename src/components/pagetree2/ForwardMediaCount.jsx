@@ -1,6 +1,7 @@
 //装载数。四个;
 import './ForwardMediaCount.less'
 class ForwardMediaCount extends React.Component{
+    times = 0;
     constructor(props){
         super(props);
         this.state = {
@@ -11,9 +12,38 @@ class ForwardMediaCount extends React.Component{
             },{
                 pic:'icon01',
                 number:'12,897',
-                text:'转载总数'
+                text:'转载媒体数'
             }]
         }
+    }
+    shouldComponentUpdate(nextProps){
+        if(nextProps.freshRender === this.props.freshRender){
+            return false;
+        }else{
+            return true;
+        }
+
+    }
+    componentWillReceiveProps(nextProps){
+        if(nextProps.lists.length>0 && this.props.freshRender !== nextProps.freshRender){
+            if(this.times>=nextProps.lists.length){
+                this.times = 0;
+
+            }
+            let newData = nextProps.lists[this.times];
+            let arrState =  this.state.itemList.slice(0);
+            arrState[0].number = newData.forwardMediaCount;
+            arrState[1].number = newData.forwardCount;
+     
+            this.setState({
+                itemList:arrState
+            })
+            console.log('nextis',nextProps.lists);
+            this.times++;
+        }
+     
+
+
     }
     render(){
         return(
@@ -22,7 +52,7 @@ class ForwardMediaCount extends React.Component{
                 <div className='Contents'>
                 
                 {
-                this.props.itemList.map((item,index)=>{
+                this.state.itemList.map((item,index)=>{
                     return(
                         <div className="item" key={index}>
                         <div className='pic'>
@@ -45,6 +75,7 @@ class ForwardMediaCount extends React.Component{
     }
 }
 ForwardMediaCount.defaultProps = {
+    freshRender:false,
     itemList:[ {
         pic:'icon02',
         number:'632',
