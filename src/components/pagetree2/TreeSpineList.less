@@ -15,7 +15,7 @@
 @step5_x:@step3_x + 0.12rem;
 @step5_y:@step4_y + 0.6rem;
 
-@bandW:2.38rem;
+@bandW:2.6rem;
 @bandH:0.7rem;
 .TreeSpineList{
     position: absolute;
@@ -30,7 +30,15 @@
     .pubtime{
         font-size: 0.14rem;
     }
+    .title{
+        width:2.6rem;
+        position: relative;
  
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+    }
+
     .step1{
         display:flex;
         flex-direction: column;
@@ -38,7 +46,7 @@
         justify-content: center;
         position: absolute;
         top:@step1_y;
-        left:@step1_x + 0.19rem;
+        left:@step1_x + 0.3rem;
         width:@bandW;
         height:@bandH;
        
@@ -53,11 +61,10 @@
         justify-content: center;
         position: absolute;
         top:@step2_y;
-        left:@step2_x + 0.09rem;
+        left:@step2_x + 0.02rem;
         width:@bandW;
         height:@bandH;
-       
-     
+    
 
 
 
@@ -85,7 +92,7 @@
         justify-content: center;
         position: absolute;
         top:@step4_y;
-        left:@step4_x + 0.01rem;
+        left:@step4_x - 0.15rem;
         width:@bandW;
         height:@bandH;
      
@@ -101,7 +108,7 @@
         justify-content: center;
         position: absolute;
         top:@step5_y;
-        left:@step5_x;
+        left:@step5_x - 0.12rem;
         width:@bandW;
         height:@bandH;
    
@@ -123,10 +130,7 @@
     }
     .step5{
         padding-left:0.05rem;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-        width:2.13rem !important;
+        
  
     }
 }

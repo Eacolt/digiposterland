@@ -1,0 +1,100 @@
+.TimelineTrend{
+    position: absolute;
+    width:6.1rem;
+    height:4.4rem;
+ 
+    left:6.55rem;
+    top:6.14rem;
+    svg{
+        position: absolute;
+        top:0;
+    }
+}
+@HH_x:1.14rem;
+@HH_y:0.8rem;
+@hor_offset:0.33rem;
+@hor_dist:0.8rem;
+@MM_x:@HH_x+@hor_offset;
+@SS_x:@MM_x+@hor_dist+@hor_offset+@hor_dist - 0.076rem;
+.TimerBox{
+    position: absolute;
+    width:100%;
+    top:0;
+    left:0;
+    .HH{
+        position: absolute;
+        left:@HH_x;
+        top:@HH_y;
+        width:0.32rem;
+        height:0.38rem;
+        color:#00EAFF;
+        font-size: 0.3rem;
+        text-align: center;
+
+
+    }
+    .H{
+        position: absolute;
+        left:@HH_x+@hor_offset;
+        top:@HH_y;
+        width:0.32rem;
+        height:0.38rem;
+        color:#00EAFF;
+        font-size: 0.3rem;
+        text-align: center;
+
+
+    }
+
+    .MM{
+        position: absolute;
+        left:@MM_x+@hor_dist;
+        top:@HH_y;
+        width:0.32rem;
+        height:0.38rem;
+        color:#00EAFF;
+        font-size: 0.3rem;
+        text-align: center;
+    
+
+
+    }
+    .M{
+  
+        position: absolute;
+        left:@MM_x+@hor_dist+@hor_offset;
+        top:@HH_y;
+        width:0.32rem;
+        height:0.38rem;
+        color:#00EAFF;
+        font-size: 0.3rem;
+        text-align: center;
+ 
+
+
+    }
+    .SS{
+   
+        position: absolute;
+        left:@SS_x;
+        top:@HH_y;
+        width:0.32rem;
+        height:0.38rem;
+        color:#00EAFF;
+        font-size: 0.3rem;
+        text-align: center;
+ 
+    }
+    .S{
+        position: absolute;
+        left:@SS_x+@hor_offset + 0.07rem;
+        top:@HH_y;
+        width:0.32rem;
+        height:0.38rem;
+        color:#00EAFF;
+        font-size: 0.3rem;
+        text-align: center;
+ 
+    }
+}
+ 
