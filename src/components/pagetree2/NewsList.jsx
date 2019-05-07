@@ -13,17 +13,18 @@ class NewsList extends React.Component{
      
     }
     componentWillReceiveProps(nextProps){
+        let perNum = 3;
 
  
         if( nextProps.lists.length>0 && this.props.freshRender !== nextProps.freshRender){
        
-            if(this.times*4+4>nextProps.lists.length+4){
+            if(this.times*perNum+perNum>nextProps.lists.length+perNum){
                 this.times = 0;
                 
             }
 
             let arr = nextProps.lists.slice(0);
-            let newArr = arr.slice(this.times*4,this.times*4+4);
+            let newArr = arr.slice(this.times*perNum,this.times*perNum+perNum);
  
             this.setState({
                 list:newArr
