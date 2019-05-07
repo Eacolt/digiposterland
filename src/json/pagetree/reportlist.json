@@ -1,8 +1,6 @@
 {
-    "data": [
-        {
-            "pressTypes": [
-                {
+    "data": [{
+            "pressTypes": [{
                     "dataType": "news",
                     "forwardCount": "378"
                 },
@@ -31,8 +29,7 @@
             "forwardCount": "1019"
         },
         {
-            "pressTypes": [
-                {
+            "pressTypes": [{
                     "dataType": "news",
                     "forwardCount": "464"
                 },
@@ -61,8 +58,7 @@
             "forwardCount": "919"
         },
         {
-            "pressTypes": [
-                {
+            "pressTypes": [{
                     "dataType": "wemedia",
                     "forwardCount": "250"
                 },
@@ -91,8 +87,7 @@
             "forwardCount": "666"
         },
         {
-            "pressTypes": [
-                {
+            "pressTypes": [{
                     "dataType": "news",
                     "forwardCount": "392"
                 },
@@ -121,8 +116,7 @@
             "forwardCount": "625"
         },
         {
-            "pressTypes": [
-                {
+            "pressTypes": [{
                     "dataType": "news",
                     "forwardCount": "312"
                 },
@@ -149,156 +143,6 @@
             "source": "掌上星沙",
             "title": "挂图作战 确保蓝天保卫战取得实效",
             "forwardCount": "424"
-        },
-        {
-            "pressTypes": [
-                {
-                    "dataType": "news",
-                    "forwardCount": "270"
-                },
-                {
-                    "dataType": "epaper",
-                    "forwardCount": "93"
-                },
-                {
-                    "dataType": "wemedia",
-                    "forwardCount": "76"
-                },
-                {
-                    "dataType": "app",
-                    "forwardCount": "28"
-                },
-                {
-                    "dataType": "wechat",
-                    "forwardCount": "9"
-                }
-            ],
-            "pubtime": "2019-04-22 10:14:27",
-            "forwardMediaCount": "341",
-            "id": "418242226400692199",
-            "source": "掌上星沙",
-            "title": "旁听中学思政课 建言解决“执法难”",
-            "forwardCount": "398"
-        },
-        {
-            "pressTypes": [
-                {
-                    "dataType": "news",
-                    "forwardCount": "228"
-                },
-                {
-                    "dataType": "wemedia",
-                    "forwardCount": "76"
-                },
-                {
-                    "dataType": "wechat",
-                    "forwardCount": "56"
-                },
-                {
-                    "dataType": "epaper",
-                    "forwardCount": "55"
-                },
-                {
-                    "dataType": "app",
-                    "forwardCount": "32"
-                }
-            ],
-            "pubtime": "2019-04-22 10:14:06",
-            "forwardMediaCount": "332",
-            "id": "-180067667426588165",
-            "source": "掌上星沙",
-            "title": "确保易地扶贫搬迁对象 真正“稳得住、能脱贫”",
-            "forwardCount": "381"
-        },
-        {
-            "pressTypes": [
-                {
-                    "dataType": "news",
-                    "forwardCount": "262"
-                },
-                {
-                    "dataType": "epaper",
-                    "forwardCount": "88"
-                },
-                {
-                    "dataType": "wemedia",
-                    "forwardCount": "39"
-                },
-                {
-                    "dataType": "app",
-                    "forwardCount": "31"
-                },
-                {
-                    "dataType": "wechat",
-                    "forwardCount": "20"
-                }
-            ],
-            "pubtime": "2019-04-19 09:44:38",
-            "forwardMediaCount": "316",
-            "id": "4820484684367701879",
-            "source": "掌上星沙",
-            "title": "为中队发展创造条件 让双拥共建再结硕果",
-            "forwardCount": "351"
-        },
-        {
-            "pressTypes": [
-                {
-                    "dataType": "news",
-                    "forwardCount": "182"
-                },
-                {
-                    "dataType": "wemedia",
-                    "forwardCount": "137"
-                },
-                {
-                    "dataType": "app",
-                    "forwardCount": "47"
-                },
-                {
-                    "dataType": "epaper",
-                    "forwardCount": "17"
-                },
-                {
-                    "dataType": "wechat",
-                    "forwardCount": "16"
-                }
-            ],
-            "pubtime": "2019-04-17 10:25:04",
-            "forwardMediaCount": "248",
-            "id": "-8681436210703407070",
-            "source": "掌上星沙",
-            "title": "加强交流 共同推进两地发展",
-            "forwardCount": "318"
-        },
-        {
-            "pressTypes": [
-                {
-                    "dataType": "news",
-                    "forwardCount": "236"
-                },
-                {
-                    "dataType": "epaper",
-                    "forwardCount": "50"
-                },
-                {
-                    "dataType": "wemedia",
-                    "forwardCount": "33"
-                },
-                {
-                    "dataType": "app",
-                    "forwardCount": "28"
-                },
-                {
-                    "dataType": "wechat",
-                    "forwardCount": "2"
-                }
-            ],
-            "pubtime": "2019-04-17 10:30:44",
-            "forwardMediaCount": "261",
-            "id": "8433091606315634729",
-            "source": "掌上星沙",
-            "title": "长沙经开区开展国家安全教育日宣传活动",
-            "forwardCount": "312"
         }
     ],
     "message": "返回成功",

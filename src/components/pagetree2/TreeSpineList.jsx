@@ -1,9 +1,11 @@
-import './TreeSpineList.less'
+ import './TreeSpineList.less'
 class TreeSpineList extends React.Component{
     tl;
+ 
     constructor(props){
         super(props);
         this.state = {
+            times:0,
           
             lists:[
                 
@@ -40,7 +42,9 @@ class TreeSpineList extends React.Component{
             this.tl.add(delay.bind(this,2),'+=0.7')
             this.tl.add(delay.bind(this,1),'+=0.7')
             this.tl.add(delay.bind(this,0),'+=0.5 ')
-            this.tl.pause(0)
+         
+
+            console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
  
  
             function delay(i){
@@ -63,21 +67,25 @@ class TreeSpineList extends React.Component{
         }
         if(this.state.lists.length>0){
             if(nextProps.freshRender !== this.props.freshRender){
+                 
+                this.setState({
+                    times:(self.state.times+1)>=self.state.lists.length ? 0: self.state.times+1
+                })
                
               
  
-                let newarr= self.state.lists.slice(0);
-                newarr.forEach((item)=>{
-                    item.opacity = 0;
-                })
+                // let newarr= self.state.lists.slice(0);
+                // newarr.forEach((item)=>{
+                //     item.opacity = 0;
+                // })
    
            
             
-                 self.setState({
-                    lists:newarr
+                //  self.setState({
+                //     lists:newarr
 
-                })
-                self.tl.restart();
+                // })
+               // self.tl.restart();
                 // setTimeout(()=>{
                 //     self.tl.restart();
                 // },1000)
@@ -112,9 +120,11 @@ class TreeSpineList extends React.Component{
 
             {
                 this.state.lists.length>0 && this.props.series.map((item,index)=>{
+                    let redClass = this.state.times === index ? ' red':'';
+
                
                     return (
-                        <div className={'step'+(index+1)} key={index} style={{opacity:this.state.lists[index].opacity}}  >
+                        <div className={'step'+(index+1)+redClass} key={index} style={{opacity:this.state.lists[index].opacity}}  >
                             <div className='title'>{item.title}</div>
                             <div className='pubtime'>{item.pubtime}</div>
                        </div>

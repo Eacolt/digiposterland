@@ -99,15 +99,16 @@ class Index extends React.Component {
 
            myspine.x = 968;
            myspine.y = 550;
-		   myspine.state.setAnimation(0,'animation',true)
-		   setTimeout(()=>{
-	     	self.playTree();
-		   },0)
-		   myspine.state.addListener({
-			   complete:function(){
-				self.playTree();
-			   }
-		   })
+		   myspine.state.setAnimation(0,'animation',false)
+		   self.setState({
+			freshRender:!self.state.freshRender,
+		
+		});
+		//    myspine.state.addListener({
+		// 	   complete:function(){
+		// 		self.playTree();
+		// 	   }
+		//    })
 		 
 		   
 
@@ -145,24 +146,26 @@ class Index extends React.Component {
 			
 			});
 
-			self.setState({
-				freshRender:!self.state.freshRender,
+			// self.setState({
+			// 	freshRender:!self.state.freshRender,
 			
-			});
+			// });
 			setInterval(()=>{
 				self.setState({
 					freshRender:!self.state.freshRender,
 				
 				});
-				self.timelineTl.restart();
+			 
 			},common.freshTime);
-			setInterval(()=>{
-				self.setState({
-					forwardFreshRender:!self.state.forwardFreshRender
-				})
-			},common.freshTime/5)
 
-				self.playTimeline();
+
+			// setInterval(()=>{
+			// 	self.setState({
+			// 		forwardFreshRender:!self.state.forwardFreshRender
+			// 	})
+			// },common.freshTime/5)
+
+		 
 	
 				this.initPixi.call(this)
 	
@@ -217,86 +220,7 @@ class Index extends React.Component {
 	
 	};
 
-	playTimeline(){
-		var i =0,self = this;
-		var kuais = ['kuai1','kuai2','kuai3','kuai4'].map((item,index)=>{
-			return {
-				x:index*1.4,
-				imgName:item,
-				freshRender:false
-			}
-		})
-		self.setState({
-			timelineList:kuais
-		})
-		// setInterval(()=>{
-		// 	let newArr = self.state.timelineList.slice(0);
-		// 	newArr[0].freshRender = !newArr[1].freshRender
-		// 	console.log('....',newArr[1].freshRender)
-		// 	self.setState({
-		// 		timelineList:newArr
-		// 	})
-		// },1100)
-		let newArr = self.state.timelineList.slice(0);
-	 
-		this.timelineTl = new gsap.TimelineMax();
-	
-		this.timelineTl.add(function(){
-		 
-				newArr.forEach((item)=>{
-					item.freshRender = false;
-				})
-			self.setState({
-				timelineList:newArr
-			})
-		},0)
  
-		this.timelineTl.add(function(){
-			newArr[0].freshRender = true
-			self.setState({
-				timelineList:newArr
-			})
-		},0.1)
-		this.timelineTl.add(function(){
-			newArr[1].freshRender = true
-			self.setState({
-				timelineList:newArr
-			})
-		},'+=1');
-		this.timelineTl.add(function(){
-			newArr[2].freshRender = true
-			self.setState({
-				timelineList:newArr
-			})
-		},'+=1');
-		this.timelineTl.add(function(){
-			newArr[3].freshRender = true
-			self.setState({
-				timelineList:newArr
-			})
-		},'+=1')
-
-
-		// while(i<4){
-	
-		// 	(function(i){
-		// 		setTimeout(()=>{
-		// 			console.log('get out!');
-		// 			let newArr = self.state.timelineList.slice(0);
-		// 			newArr.push({
-		// 				x:(i)*1.4,
-		// 				imgName:kuais[i]
-					 
-		// 			})
-		// 			self.setState({
-		// 				timelineList:newArr
-		// 			})
-		// 		},i*1000)
-		// 	}(i));
-		// 	i++;
-		// }
-		
-	}
 	componentDidUpdate(){
 
 	}
@@ -326,17 +250,16 @@ class Index extends React.Component {
 		       <Weekspreadtrend timestamp={this.state.weekspreadtrend.timestamp} series={this.state.weekspreadtrend.series} freshRender={this.state.freshRender}/>
               {/* <TimelineTrend freshRender={this.state.freshRender} bandList={this.state.timelineList} fontSize={this.state.fontSize}/> */}
 			  <PressDistributePie freshRender={this.state.freshRender} pressTypes={this.state.reportlist[0]}/>
-			  <ForwardMediaCount freshRender={this.state.forwardFreshRender} lists={this.state.reportlist}/>
+			  <ForwardMediaCount freshRender={this.state.freshRender} lists={this.state.reportlist}/>
 			  <HotRanking series={this.state.reprinthottop} />
 			  {
-				  reprintNews && <TreeSpineList freshRender={this.state.treefreshRender} series={reprintNews}/>
+				  reprintNews && <TreeSpineList freshRender={this.state.freshRender} series={reprintNews}/>
 			  }
 
 			  <NewsList freshRender={this.state.freshRender} lists={this.state.reprintlistlatest}/>
 			 
 			
 
-			  <Title/>
 		   </div>
 		   
  
