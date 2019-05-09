@@ -3,7 +3,7 @@ import './App.less'
 import Page2 from './page2/index.jsx'
 // import PageTree from './pagetree/index.jsx'
 import PageTree2 from './pagetree2/index.jsx'
-//  import PageMap from './pagemap/index.jsx'
+ import PageMap from './pagemap/index.jsx'
  
 class App extends React.Component {
 	constructor(props) {
@@ -13,7 +13,6 @@ class App extends React.Component {
 			digiData:[2,1,2,5]
 		}
 	}
-
 	componentDidMount() {
 
 		let self = this;
@@ -35,7 +34,6 @@ class App extends React.Component {
 		// },2000)
 	 // self.setState({})
 
-		
 	}
 	render() {
 		console.log('更舞台更新')
@@ -46,9 +44,9 @@ class App extends React.Component {
 			// </div>
 		 
             <div style={{fontSize:'0.5rem'}}>
-					<Page2/>
+					{/* <Page2/> */}
 				 {/* <PageTree2/> */}
-				 {/* <PageMap/> */}
+				 <PageMap/>
 			</div>
 
 		 

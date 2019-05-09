@@ -79,6 +79,42 @@ class Index extends React.Component {
     initPixi(){
 		var self =this;
 		const PixiLoader = new PIXI.loaders.Loader();
+		/////
+		const PixiLoaderBase = new PIXI.loaders.Loader();
+		let pixiBase = new PIXI.Application({
+            width:1920,
+            height:1080,
+            transparent:true
+		});
+		pixiBase.view.style.cssText = 'width:100%;height:100%;position:relative;';
+		this.refs.lightAnime.appendChild(pixiBase.view);
+		PixiLoaderBase.add([
+            {
+                "name":"bganime_an",
+                "url":"./spine/background/skeleton.json"
+
+            }
+        ])
+        .load((loader, resources) => {
+            console.log(resources,'rrr')
+           let myspine = new PIXI.spine.Spine(resources.bganime_an.spineData)
+		   pixiBase.stage.addChild(myspine);
+		   console.log(myspine,'myspppp')
+
+ 
+
+            myspine.x = 1920/2;
+            myspine.y = 1080/2;
+		    myspine.state.setAnimation(0,'animation',true);
+
+
+		   
+
+		});
+		
+
+		//////////////
+
         let pixiApp = new PIXI.Application({
             width:1920,
             height:1080,
@@ -255,7 +291,10 @@ class Index extends React.Component {
 		//console.log(this.state.paper_sevenday,'llll')
 		return (
 		   <div className='PageTree'>
-		   
+		      <div style={{position:'absolute',width:'100%',height:'100%'}}>
+			   <img src={require('../../img/treemap.png')} width='100%' height='100%'/>
+		   </div>
+		    <div ref='lightAnime' className='pixicanvas'></div>
 
            <div ref='pixicanvas' className='pixicanvas'></div>
 		       <Weekspreadtrend timestamp={this.state.weekspreadtrend.timestamp} series={this.state.weekspreadtrend.series} freshRender={this.state.freshRender}/>
