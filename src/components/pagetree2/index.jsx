@@ -8,6 +8,7 @@ import PressDistributePie from './PressDistributePie.jsx';
 import TreeSpineList from './TreeSpineList.jsx'
 import NewsList from './NewsList.jsx'
 import common from './common.js'
+ 
 //reportlist.json报道列表(稿件传播情况)
 //reprinthottop.json,top5列表,右边
 //reprintlistlatest.json.最新报道列表（最新转载列表)
@@ -22,6 +23,8 @@ import common from './common.js'
  */
  
 class Index extends React.Component {
+	myspine;
+	times = 0;
 	constructor(props) {
 		super(props)
 		this.myChart = null;
@@ -92,23 +95,25 @@ class Index extends React.Component {
         ])
         .load((loader, resources) => {
             console.log(resources,'rrr')
-           let myspine = new PIXI.spine.Spine(resources.skeleton_an.spineData)
-		   pixiApp.stage.addChild(myspine);
+           self.myspine = new PIXI.spine.Spine(resources.skeleton_an.spineData)
+		   pixiApp.stage.addChild(self.myspine);
 
  
 
-           myspine.x = 968;
-           myspine.y = 550;
-		   myspine.state.setAnimation(0,'animation',false)
+           self.myspine.x = 988;
+           self.myspine.y = 550;
+		   self.myspine.state.setAnimation(0,'animation',false);
+		   self.myspine.skeleton.setSkinByName('k5');
 		   self.setState({
 			freshRender:!self.state.freshRender,
 		
 		});
-		//    myspine.state.addListener({
-		// 	   complete:function(){
-		// 		self.playTree();
-		// 	   }
-		//    })
+		   self.myspine.state.addListener({
+			   complete:function(){
+					self.myspine.state.setAnimation(0,'animation2',true);
+				
+			   }
+		   })
 		 
 		   
 
@@ -151,10 +156,16 @@ class Index extends React.Component {
 			
 			// });
 			setInterval(()=>{
+				self.times+=1;
+				if(self.times>=5){
+					self.times = 0;
+				}
 				self.setState({
 					freshRender:!self.state.freshRender,
 				
 				});
+				self.myspine.skeleton.setSkinByName('k'+(5-self.times));
+			
 			 
 			},common.freshTime);
 

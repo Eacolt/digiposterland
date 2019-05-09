@@ -117,7 +117,7 @@ class PressCountRatioPie extends React.Component{
                    radius : ['15%','50%'],
                    center: ['34%', '50%'],
                    data:seriresData.sort(function (a, b) { return a.value - b.value; }),
-                   roseType:'radius',
+                //    roseType:'radius',
                    label: false,
                    labelLine:false,
                    visualMap: {

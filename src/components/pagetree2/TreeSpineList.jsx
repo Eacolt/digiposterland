@@ -36,7 +36,7 @@ class TreeSpineList extends React.Component{
                 newarr.forEach((item)=>{
                     item.opacity = 0;
                 })
-            },2.55)
+            },0.55)
             this.tl.add(delay.bind(this,4),'+=0')
             this.tl.add(delay.bind(this,3),'+=0.7')
             this.tl.add(delay.bind(this,2),'+=0.7')
@@ -120,11 +120,11 @@ class TreeSpineList extends React.Component{
 
             {
                 this.state.lists.length>0 && this.props.series.map((item,index)=>{
-                    let redClass = this.state.times === index ? ' red':'';
+                  //  let redClass = this.state.times === index ? ' red':'';
 
                
                     return (
-                        <div className={'step'+(index+1)+redClass} key={index} style={{opacity:this.state.lists[index].opacity}}  >
+                        <div className={'step'+(index+1)} key={index} style={{opacity:this.state.lists[index].opacity}}  >
                             <div className='title'>{item.title}</div>
                             <div className='pubtime'>{item.pubtime}</div>
                        </div>

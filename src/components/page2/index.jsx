@@ -101,21 +101,21 @@ class Index extends React.Component {
 			console.log('sesse',self.state)
 
 
-			window.addEventListener('resize',function(){
-				// if(setterTime){
-				// 	clearTimeout(setterTime);
-				// }
-				if(setterTime){
-					setters = setTimeout(()=>{
-						setterTime = true;
-						console.log(888)
-					},300)
-					setterTime = false;
-				}
+			// window.addEventListener('resize',function(){
+			// 	// if(setterTime){
+			// 	// 	clearTimeout(setterTime);
+			// 	// }
+			// 	if(setterTime){
+			// 		setters = setTimeout(()=>{
+			// 			setterTime = true;
+			// 			console.log(888)
+			// 		},300)
+			// 		setterTime = false;
+			// 	}
 		
 
-				//self.setState({freshRender:!self.state.freshRender});
-			})
+			// 	 self.setState({freshRender:!self.state.freshRender});
+			// })
 			// self.setState({})
  
 			console.log('this.state.paper_sevenday.timestamp',this.state.paper_sevenday.timestamp)
@@ -126,7 +126,7 @@ class Index extends React.Component {
 			this.setState({
 				freshRender:!self.state.freshRender
 			})
-		},5000)
+		},10000)
    
 	
 	}

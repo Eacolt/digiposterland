@@ -1,6 +1,6 @@
 import './App.less'
 // import Page1 from './page1'
-// import Page2 from './page2/index.jsx'
+import Page2 from './page2/index.jsx'
 // import PageTree from './pagetree/index.jsx'
 import PageTree2 from './pagetree2/index.jsx'
 //  import PageMap from './pagemap/index.jsx'
@@ -46,8 +46,8 @@ class App extends React.Component {
 			// </div>
 		 
             <div style={{fontSize:'0.5rem'}}>
-					{/* <Page2/> */}
-				 <PageTree2/>
+					<Page2/>
+				 {/* <PageTree2/> */}
 				 {/* <PageMap/> */}
 			</div>
 

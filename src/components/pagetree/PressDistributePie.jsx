@@ -43,7 +43,20 @@ class PressDistributePie extends React.Component{
                     value:item.forwardCount, 
                     name:_names[item.dataType][0],
                     itemStyle:{
-                        color:_names[item.dataType][1]
+                        color:{
+                            type:'radial',
+                            x:0.5,
+                            y:0.5,
+                            r:0.5,
+                            colorStops:[
+                                {
+                                    offset:0,color:_names[item.dataType][1]
+                                },
+                                {
+                                    offset:1,color:'red'
+                                }
+                            ]
+                        }
                     }
                   
                 }

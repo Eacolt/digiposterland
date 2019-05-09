@@ -20,22 +20,37 @@ class ContentAnalyTrendLine extends React.Component{
             var legendName = [];
             var series = seriesData.map((item)=>{
                 let names = {
-                    newsForwardCount:'网站转发数',
-                    appForwardCount:'APP转发数',
-                    weiboForwardCount:'微博转发数',
-                    wechatReadCount:'微信阅读数'
+                    newsForwardCount:['网站转发数','rgba(14,138,233,1)','rgba(4,238,150,0.25)'],
+                    appForwardCount:['APP转发数','rgba(251,190,4,1)','rgba(251,190,4,0.25)'],
+                    weiboForwardCount:['微博转发数','rgba(173,43,227,1)','rgba(173,43,227,0.25)'],
+                    wechatReadCount:['微信阅读数','rgba(4,238,150,1)','rgba(4,238,150,0.25)']
 
                 }
- 
-                legendName.push(names[item[0]])
-                
-            
+              
+                legendName.push(names[item[0]][0]);
+
                 return {
-                    name:names[item[0]],
+                    name:names[item[0]][0],
                     data:item[1],
                     type: 'line',
                     smooth:true,
-                    areaStyle: {}
+                    itemStyle:{
+                        color:names[item[0]][1]
+                    },
+                    areaStyle:  {
+                        color:{
+                            type:'linear',
+                            x:0,
+                            y:0,
+                            x2:0,
+                            y2:1,
+                            colorStops:[
+                                {offset:0,color:names[item[0]][1]},
+                                {offset:1,color:names[item[0]][2]}
+                            ]
+                        }
+                        
+                    }
                 }
             });
             legendName = legendName.map((item)=>{

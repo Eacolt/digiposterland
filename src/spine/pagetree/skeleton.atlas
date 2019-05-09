@@ -6,63 +6,63 @@ filter: Linear,Linear
 repeat: none
 images/Electricity 014 Charge Radial_00000
   rotate: false
-  xy: 1222, 686
+  xy: 1257, 786
   size: 125, 125
   orig: 125, 125
   offset: 0, 0
   index: -1
 images/Electricity 014 Charge Radial_00002
   rotate: false
-  xy: 1349, 686
+  xy: 985, 689
   size: 125, 125
   orig: 125, 125
   offset: 0, 0
   index: -1
 images/Electricity 014 Charge Radial_00004
   rotate: false
-  xy: 788, 645
+  xy: 1112, 689
   size: 125, 125
   orig: 125, 125
   offset: 0, 0
   index: -1
 images/Electricity 014 Charge Radial_00006
   rotate: false
-  xy: 787, 518
+  xy: 1239, 659
   size: 125, 125
   orig: 125, 125
   offset: 0, 0
   index: -1
 images/Electricity 014 Charge Radial_00008
   rotate: false
-  xy: 915, 645
+  xy: 788, 648
   size: 125, 125
   orig: 125, 125
   offset: 0, 0
   index: -1
 images/Electricity 014 Charge Radial_00010
   rotate: false
-  xy: 914, 518
+  xy: 787, 521
   size: 125, 125
   orig: 125, 125
   offset: 0, 0
   index: -1
 images/Electricity 014 Charge Radial_00013
   rotate: false
-  xy: 1042, 647
+  xy: 827, 394
   size: 125, 125
   orig: 125, 125
   offset: 0, 0
   index: -1
 images/Electricity 014 Charge Radial_00015
   rotate: false
-  xy: 827, 391
+  xy: 827, 267
   size: 125, 125
   orig: 125, 125
   offset: 0, 0
   index: -1
 images/Electricity 014 Charge Radial_00017
   rotate: false
-  xy: 827, 264
+  xy: 838, 140
   size: 125, 125
   orig: 125, 125
   offset: 0, 0
@@ -118,14 +118,14 @@ images/Sparks 061 Ray up loop_00006
   index: -1
 images/Sparks 061 Ray up loop_00007
   rotate: false
-  xy: 1082, 1507
+  xy: 796, 1002
   size: 196, 231
   orig: 196, 231
   offset: 0, 0
   index: -1
 images/Sparks 061 Ray up loop_00008
-  rotate: true
-  xy: 1082, 1310
+  rotate: false
+  xy: 788, 775
   size: 195, 225
   orig: 195, 225
   offset: 0, 0
@@ -145,22 +145,22 @@ images/Sparks 061 Ray up loop_00010
   offset: 0, 0
   index: -1
 images/Sparks 061 Ray up loop_00011
-  rotate: true
-  xy: 1002, 774
+  rotate: false
+  xy: 1082, 1520
   size: 194, 218
   orig: 194, 218
   offset: 0, 0
   index: -1
 images/Sparks 061 Ray up loop_00012
-  rotate: true
-  xy: 844, 1349
+  rotate: false
+  xy: 866, 1306
   size: 193, 236
   orig: 193, 236
   offset: 0, 0
   index: -1
 images/Sparks 061 Ray up loop_00013
   rotate: true
-  xy: 1032, 970
+  xy: 254, 12
   size: 158, 226
   orig: 158, 226
   offset: 0, 0
@@ -201,22 +201,22 @@ images/Sparks 061 Ray up loop_00018
   offset: 0, 0
   index: -1
 images/Sparks 061 Ray up loop_00019
-  rotate: true
-  xy: 798, 1167
+  rotate: false
+  xy: 994, 1066
   size: 180, 238
   orig: 180, 238
   offset: 0, 0
   index: -1
 images/Sparks 061 Ray up loop_00020
-  rotate: true
-  xy: 796, 986
+  rotate: false
+  xy: 1176, 1070
   size: 179, 234
   orig: 179, 234
   offset: 0, 0
   index: -1
 images/Sparks 061 Ray up loop_00021
   rotate: true
-  xy: 1038, 1130
+  xy: 994, 886
   size: 178, 230
   orig: 178, 230
   offset: 0, 0
@@ -237,56 +237,56 @@ images/Sparks 061 Ray up loop_00023
   index: -1
 images/Sparks 063 Ray Up_00000
   rotate: false
-  xy: 818, 1380
+  xy: 2018, 1921
   size: 17, 125
   orig: 17, 125
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00001
-  rotate: true
-  xy: 254, 10
+  rotate: false
+  xy: 914, 521
   size: 18, 125
   orig: 18, 125
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00002
   rotate: false
-  xy: 1998, 1921
+  xy: 915, 648
   size: 18, 125
   orig: 18, 125
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00003
   rotate: false
-  xy: 798, 1380
+  xy: 934, 521
   size: 18, 125
   orig: 18, 125
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00004
   rotate: false
-  xy: 1169, 647
+  xy: 935, 648
   size: 18, 125
   orig: 18, 125
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00005
   rotate: false
-  xy: 954, 306
+  xy: 1998, 1921
   size: 18, 125
   orig: 18, 125
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00006
-  rotate: true
-  xy: 381, 10
+  rotate: false
+  xy: 955, 648
   size: 18, 125
   orig: 18, 125
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00007
   rotate: false
-  xy: 2018, 1921
+  xy: 954, 521
   size: 18, 125
   orig: 18, 125
   offset: 0, 0
@@ -300,7 +300,7 @@ images/Sparks 063 Ray Up_00008
   index: -1
 images/Sparks 063 Ray Up_00009
   rotate: false
-  xy: 1189, 669
+  xy: 954, 416
   size: 18, 103
   orig: 18, 103
   offset: 0, 0
@@ -314,14 +314,14 @@ images/Sparks 063 Ray Up_00010
   index: -1
 images/Sparks 063 Ray Up_00011
   rotate: false
-  xy: 1265, 1026
+  xy: 954, 317
   size: 18, 97
   orig: 18, 97
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00012
-  rotate: false
-  xy: 1285, 1028
+  rotate: true
+  xy: 984, 669
   size: 18, 95
   orig: 18, 95
   offset: 0, 0
@@ -334,155 +334,155 @@ images/Sparks 063 Ray Up_00013
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00014
-  rotate: false
-  xy: 1316, 1034
+  rotate: true
+  xy: 1081, 673
   size: 14, 89
   orig: 14, 89
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00015
-  rotate: false
-  xy: 1332, 1036
+  rotate: true
+  xy: 838, 39
   size: 14, 87
   orig: 14, 87
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00016
-  rotate: false
-  xy: 1348, 1038
+  rotate: true
+  xy: 838, 23
   size: 14, 85
   orig: 14, 85
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00017
-  rotate: false
-  xy: 1364, 1040
+  rotate: true
+  xy: 838, 7
   size: 14, 83
   orig: 14, 83
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00018
-  rotate: false
-  xy: 838, 172
+  rotate: true
+  xy: 565, 212
   size: 14, 81
   orig: 14, 81
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00019
-  rotate: false
-  xy: 838, 91
+  rotate: true
+  xy: 565, 196
   size: 14, 79
   orig: 14, 79
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00020
-  rotate: false
-  xy: 854, 180
+  rotate: true
+  xy: 565, 181
   size: 13, 73
   orig: 13, 73
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00021
-  rotate: false
-  xy: 1209, 705
+  rotate: true
+  xy: 1297, 1789
   size: 11, 67
   orig: 11, 67
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00022
-  rotate: false
-  xy: 526, 91
+  rotate: true
+  xy: 1172, 676
   size: 11, 63
   orig: 11, 63
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00023
-  rotate: false
-  xy: 869, 194
+  rotate: true
+  xy: 1366, 1790
   size: 10, 59
   orig: 10, 59
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00024
-  rotate: false
-  xy: 539, 97
+  rotate: true
+  xy: 927, 33
   size: 10, 57
   orig: 10, 57
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00025
-  rotate: false
-  xy: 881, 200
+  rotate: true
+  xy: 925, 21
   size: 10, 53
   orig: 10, 53
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00026
-  rotate: false
-  xy: 854, 117
+  rotate: true
+  xy: 1427, 1795
   size: 10, 61
   orig: 10, 61
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00027
-  rotate: false
-  xy: 838, 18
+  rotate: true
+  xy: 927, 45
   size: 10, 71
   orig: 10, 71
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00028
-  rotate: false
-  xy: 1039, 433
+  rotate: true
+  xy: 984, 657
   size: 10, 83
   orig: 10, 83
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00029
   rotate: false
-  xy: 1305, 1026
+  xy: 1371, 687
   size: 9, 97
   orig: 9, 97
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00030
-  rotate: true
-  xy: 1297, 1790
+  rotate: false
+  xy: 2037, 1832
   size: 9, 103
   orig: 9, 103
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00031
-  rotate: true
-  xy: 1270, 1125
+  rotate: false
+  xy: 2037, 1937
   size: 9, 109
   orig: 9, 109
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00032
-  rotate: true
-  xy: 827, 255
+  rotate: false
+  xy: 975, 658
   size: 7, 115
   orig: 7, 115
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00033
   rotate: true
-  xy: 1297, 1801
+  xy: 254, 6
   size: 4, 125
   orig: 4, 125
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00034
-  rotate: false
-  xy: 1260, 1003
+  rotate: true
+  xy: 1297, 1802
   size: 3, 125
   orig: 3, 125
   offset: 0, 0
   index: -1
 images/Sparks 063 Ray Up_00035
-  rotate: true
-  xy: 1270, 1136
+  rotate: false
+  xy: 1366, 659
   size: 3, 125
   orig: 3, 125
   offset: 0, 0
@@ -496,14 +496,14 @@ images/Sparks 063 Ray Up_00036
   index: -1
 images/qiangguang
   rotate: true
-  xy: 1222, 813
+  xy: 1226, 913
   size: 155, 154
   orig: 155, 154
   offset: 0, 0
   index: -1
 images/shuju_1
   rotate: false
-  xy: 292, 156
+  xy: 1494, 1792
   size: 270, 70
   orig: 270, 70
   offset: 0, 0
@@ -516,22 +516,22 @@ images/shuju_2
   offset: 0, 0
   index: -1
 images/shuju_3
-  rotate: false
-  xy: 1494, 1796
+  rotate: true
+  xy: 798, 1235
   size: 270, 66
   orig: 270, 66
   offset: 0, 0
   index: -1
 images/shuju_4
   rotate: false
-  xy: 254, 30
-  size: 264, 54
-  orig: 264, 54
+  xy: 292, 172
+  size: 271, 54
+  orig: 271, 54
   offset: 0, 0
   index: -1
 images/shuju_5
   rotate: false
-  xy: 254, 86
+  xy: 985, 816
   size: 270, 68
   orig: 270, 68
   offset: 0, 0
@@ -552,28 +552,28 @@ images/shuxian1
   index: -1
 images/yuanxingzhentu01
   rotate: false
-  xy: 564, 145
+  xy: 923, 57
   size: 81, 81
   orig: 81, 81
   offset: 0, 0
   index: -1
 images/yuanxingzhentu02
   rotate: false
-  xy: 974, 316
+  xy: 937, 1260
   size: 44, 44
   orig: 44, 44
   offset: 0, 0
   index: -1
 images/yuanxingzhentu03
   rotate: false
-  xy: 974, 362
+  xy: 866, 1235
   size: 69, 69
   orig: 69, 69
   offset: 0, 0
   index: -1
 images/yuanxingzhentu04
   rotate: false
-  xy: 954, 433
+  xy: 838, 55
   size: 83, 83
   orig: 83, 83
   offset: 0, 0
@@ -601,14 +601,14 @@ images/yuanxingzhentu07
   index: -1
 images/yuanxingzhentu08
   rotate: false
-  xy: 1270, 1141
+  xy: 482, 3
   size: 164, 167
   orig: 164, 167
   offset: 0, 0
   index: -1
 images/yuanxingzhentu09
   rotate: false
-  xy: 788, 772
+  xy: 1061, 1306
   size: 212, 212
   orig: 212, 212
   offset: 0, 0

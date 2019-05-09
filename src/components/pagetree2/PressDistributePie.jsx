@@ -39,6 +39,7 @@ class PressDistributePie extends React.Component{
                   name:_names[item.dataType][0],
                   icon:'roundRect'
                 })
+               
                 return{
                     value:item.forwardCount, 
                     name:_names[item.dataType][0],
@@ -50,6 +51,7 @@ class PressDistributePie extends React.Component{
             })
             this.myOption.legend.data = legendNames;
             this.myOption.series.data = pressTypes;
+             
 
 
             this.myOption.legend.formatter =  function(name){
@@ -123,6 +125,12 @@ class PressDistributePie extends React.Component{
                     labelLine:false,
                     label:false,
                     itemStyle: {
+                     
+                            color:function(data){
+                                console.log(data)
+                                return '#C1232B'
+                            },
+                      
                         emphasis: {
                             shadowBlur: 10,
                             shadowOffsetX: 10,
