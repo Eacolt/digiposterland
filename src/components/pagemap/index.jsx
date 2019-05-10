@@ -37,7 +37,12 @@ class Index extends React.Component{
     }
     initPixi(){
 		var self =this;
-		const PixiLoader = new PIXI.loaders.Loader();
+        const PixiLoader = new PIXI.loaders.Loader();
+        
+
+
+
+        
         let pixiApp = new PIXI.Application({
             width:1920,
             height:1080,

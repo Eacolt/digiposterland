@@ -87,13 +87,10 @@ module.exports = {
 			},
 			{
 				test: /\.(js|jsx)$/,
-				use:{
-                    loader:'babel-loader',
-                    options:{
-                        presets:['@babel/preset-env']
-                    }
-
-                }
+				use:[{
+					loader:'babel-loader'
+				}],
+				exclude:/node_modules/
 			 
 			}
 		]
@@ -106,18 +103,7 @@ module.exports = {
 		}
 	},
 	optimization:{
-        minimizer: [new UglifyJsPlugin({
-            exclude: /node_modules/,
-            uglifyOptions:{
-                compress:{
-                    warnings:false,
-                    drop_debugger:true,
-                    drop_console:true
-    
-                }
-            }
-        
-        })],
+  
 		splitChunks:{
 			cacheGroups:{
 				js:{
