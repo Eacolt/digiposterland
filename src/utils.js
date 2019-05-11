@@ -1,7 +1,7 @@
 if(PRODUCTION){
     var baseUrl = ''
 }else if(DEVELEPMENT){
-    var baseUrl = 'http://localhost:8066' 
+    var baseUrl = 'http://115.29.214.129:8069/api/'
 }
 export default {
     baseUrl

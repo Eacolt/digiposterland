@@ -1,7 +1,9 @@
 import './NewsList.less'
 import { TweenMax } from 'gsap';
+ 
+
 class NewsList extends React.Component{
-    times = 0;
+    rolltimes = 3;
     constructor(props){
         super(props)
         this.state = {
@@ -21,59 +23,68 @@ class NewsList extends React.Component{
         //     list:
         // });
         console.log(this.props.lists,'<<<<list')
-
-    
-
-
  
-        // if( nextProps.lists.length>0 && this.props.freshRender !== nextProps.freshRender){
-       
-        //     if(this.times*perNum+perNum>nextProps.lists.length+perNum){
-        //         this.times = 0;
-                
-        //     }
-
-        //     let arr = nextProps.lists.slice(0);
-        //     let newArr = arr.slice(this.times*perNum,this.times*perNum+perNum);
- 
-        //     this.setState({
-        //         list:newArr
-        //     },()=>{
-        //         // var fontsize = parseInt(document.documentElement.style.fontSize);
-        //         // console.log('ffff',fontsize)
-        //         // console.log('telist===>>', ReactDOM.findDOMNode(self.refs.listAnDom).childNodes[0])
-        //         // TweenMax.to(ReactDOM.findDOMNode(self.refs.listAnDom).childNodes,3,{
-        //         //     y:'-='+fontsize
-        //         // })
-        //     });
-
-
-         
-        //    this.times++;
-        // }
-
-
-      
      
     }
     startRolling(totalList){
+        
         var self = this;
         this.setState({
-            list:totalList.slice(0,3)
+            list:totalList.slice(0,self.rolltimes)
         });
-        setInterval(()=>{
-            let newArr = self.state.list.concat(totalList[3])
-            this.setState({
-                list:lists.slice(0,3)
+        function createNewArr(callback){
+   
+            let newArr = self.state.list.concat();
+            self.rolltimes++;
+            if(self.rolltimes>=totalList.length){
+                self.rolltimes = 0;
+            }
+            newArr.push(totalList[self.rolltimes]);
+     
+            self.setState({
+                list:newArr
+            },()=>{
+                callback();
+                // var fontsize = parseInt(document.documentElement.style.fontSize);
+                // ReactDOM.findDOMNode(self.refs.listAnDom).scrollTop = fontsize;
+              //  let tops = window.getComputedStyle(ReactDOM.findDOMNode(self.refs.listAnDom).childNodes[1],null).display;
+                //console.log('第一个TOP',tops);
+               // runRolling();
             });
-        },2000)
+        }
+        setTimeout(()=>{
+
+
+            createNewArr(function(){
+                runRolling();
+            });
+        
+          console.log('我要曹操你')
+        },5000)
         function runRolling(){
-            self.setState(prestate=>{
-                let newArr = prestate.lists.slice(0).slice()
-                return {
-                    list:prestate.lists.slice(0)
-                }
-            })
+            var fontsize = parseInt(document.documentElement.style.fontSize);
+             TweenMax.to(ReactDOM.findDOMNode(self.refs.listAnDom),1.2,{
+                scrollTop:'+='+fontsize,
+                onStart:function(){
+                    console.log('啥个意思?')
+                },
+                 onComplete:function(){
+                     
+
+                     let newArr = self.state.list.concat();
+                     newArr.shift();
+                     self.setState({
+                         list:newArr
+                     });
+                     setTimeout(()=>{
+                        createNewArr(function(){
+                            runRolling();
+                        });
+                     },5000)
+             
+       
+                 }
+             })
 
         }
     }
@@ -81,6 +92,7 @@ class NewsList extends React.Component{
          if( nextProps.lists.length>0 &&  JSON.stringify(this.props.lists) !== JSON.stringify(nextProps.lists)){
        
              this.startRolling.call(this,nextProps.lists);
+       
         
         }
     }
@@ -91,6 +103,9 @@ class NewsList extends React.Component{
             <div className='NewsList' ref="listAnDom">
             {
                this.state.list.map((item,index)=>{
+                   console.log('iiiiiitem',item)
+
+          
                    let pic = (function(_item){
                        switch(_item.dataType){
                            case 'news':
@@ -101,22 +116,23 @@ class NewsList extends React.Component{
                            return 'icon_xl.png';
                            case 'app': 
                            return 'icon_ie.png'
-
                            default:
                            return 'icon_ie.png'
-                      
                        }
-
                    }(item));
 
                     return (
                         <div className='Item' key={index}>
-                           <div className='pic'>
-                               <img src={require(`../../img/${pic}`)} width='100%' height='auto'/>
+                           <div className='pic' style={{backgroundImage:`url("../../img/${pic}")`,backgroundSize:'contain',backgroundPosition:'55% 0',backgroundRepeat:'no-repeat'}}>
+                           
                            </div>
                            <div >
                              <div className='title'>{item.title}</div>
-                             <div className='content' style={{color:'#02baf2'}}>{item.pubtime} {item.source}</div>
+                             <div className='content' style={{color:'#02baf2'}}>
+                             <span>{item.pubdate}</span>
+                             <span style={{paddingLeft:'0.2rem'}}>{item.source}</span>
+                        
+                             </div>
                            </div>
                            
                         </div>

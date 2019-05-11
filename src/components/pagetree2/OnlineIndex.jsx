@@ -124,36 +124,20 @@ class Index extends React.Component {
 			})
 		})
 	};
-	async reg_pro(){
+	async reg_pro(_index){
      
-		let reportlist = await this.getJson_promise('./json/pagetree/reportlist.json');
-		let reprinthottop = await this.getJson_promise('./json/pagetree/reprinthottop.json');
-		let reprintlistlatest = await this.getJson_promise('./json/pagetree/reprintlistlatest.json');
+		let keyWord = await this.getPageKey();
+		let reportlist = await this.getTreeList(keyWord);
+		let reprintlistlatest = await this.getLatestList(keyWord,reportlist[_index].id);
+		let reprinthottop = await this.getForwardTop(keyWord,reportlist[_index].id)
 		let weekspreadtrend = await this.getJson_promise('./json/pagetree/weekspreadtrend.json');
- 
 		return {
 			reportlist,
 			reprinthottop,
 			reprintlistlatest,
 			weekspreadtrend
- 
 		}
-		 
 	}
-	// async reg_pro(_index){
-     
-	// 	let keyWord = await this.getPageKey();
-	// 	let reportlist = await this.getTreeList(keyWord);
-	// 	let reprintlistlatest = await this.getLatestList(keyWord,reportlist[_index].id);
-	// 	let reprinthottop = await this.getForwardTop(keyWord,reportlist[_index].id)
-	// 	let weekspreadtrend = await this.getJson_promise('./json/pagetree/weekspreadtrend.json');
-	// 	return {
-	// 		reportlist,
-	// 		reprinthottop,
-	// 		reprintlistlatest,
-	// 		weekspreadtrend
-	// 	}
-	// }
     initPixi(){
 		var self =this;
 		const PixiLoader = new PIXI.loaders.Loader();
@@ -220,117 +204,65 @@ class Index extends React.Component {
 	componentDidMount() {
 		let self = this;
  
-		this.reg_pro().then(({
+		self.reg_pro(self.times).then(({
 			reportlist,
 			reprinthottop,
 			reprintlistlatest,
 			weekspreadtrend
 		})=>{
-	 
 			self.setState({
-				reportlist,
+			 reportlist,
 			reprinthottop,
 			reprintlistlatest,
 			weekspreadtrend,
 			fontSize:parseInt(window.document.documentElement.style.fontSize),
-
 			});
-
 			setInterval(()=>{
-				self.times+=1;
-				if(self.times>=5){
-					self.times = 0;
-				}
-				self.setState({
-					freshRender:!self.state.freshRender,
+				refreshAll();
+			},common.freshTime);//七秒刷新一次
+
+			function refreshAll(){
+				self.reg_pro(self.times).then(({
+					reportlist,
+					reprinthottop,
+					reprintlistlatest,
+					weekspreadtrend
+				})=>{
+			 
+					self.setState({
+					 reportlist,
+					reprinthottop,
+					reprintlistlatest,
+					weekspreadtrend,
+					fontSize:parseInt(window.document.documentElement.style.fontSize),
+		
+					},()=>{
+						self.myspine.skeleton.setSkinByName('k'+(5-self.times));
+						self.times+=1;
+						if(self.times>=5){
+							self.times = 0;
+						}
+						self.setState({
+							freshRender:!self.state.freshRender,
+							forwardFreshRender:!self.state.forwardFreshRender
+						
+						});
+
+					})
+				
 				
 				});
-				self.myspine.skeleton.setSkinByName('k'+(5-self.times));
-			
-			 
-			},common.freshTime);
 
+			}
 
-			// setInterval(()=>{
-			// 	self.setState({
-			// 		forwardFreshRender:!self.state.forwardFreshRender
-			// 	})
-			// },common.freshTime/5)
-
-		 
+			self.initPixi.call(self)
 	
-				this.initPixi.call(this)
-	
-	 
-
+ 
 		})
 	 
 		
 	
 	}
-	// componentDidMount() {
-	// 	let self = this;
- 
-	// 	self.reg_pro(self.times).then(({
-	// 		reportlist,
-	// 		reprinthottop,
-	// 		reprintlistlatest,
-	// 		weekspreadtrend
-	// 	})=>{
-	// 		self.setState({
-	// 		 reportlist,
-	// 		reprinthottop,
-	// 		reprintlistlatest,
-	// 		weekspreadtrend,
-	// 		fontSize:parseInt(window.document.documentElement.style.fontSize),
-	// 		});
-	// 		setInterval(()=>{
-	// 			refreshAll();
-	// 		},common.freshTime);//七秒刷新一次
-
-	// 		function refreshAll(){
-	// 			self.reg_pro(self.times).then(({
-	// 				reportlist,
-	// 				reprinthottop,
-	// 				reprintlistlatest,
-	// 				weekspreadtrend
-	// 			})=>{
-			 
-	// 				self.setState({
-	// 				 reportlist,
-	// 				reprinthottop,
-	// 				reprintlistlatest,
-	// 				weekspreadtrend,
-	// 				fontSize:parseInt(window.document.documentElement.style.fontSize),
-		
-	// 				},()=>{
-	// 					self.myspine.skeleton.setSkinByName('k'+(5-self.times));
-	// 					self.times+=1;
-	// 					if(self.times>=5){
-	// 						self.times = 0;
-	// 					}
-	// 					self.setState({
-	// 						freshRender:!self.state.freshRender,
-	// 						forwardFreshRender:!self.state.forwardFreshRender
-						
-	// 					});
-	// 				})
-				
-				
-	// 			});
-
-	// 		}
-
-	// 		self.initPixi.call(self)
-	
- 
-	// 	})
-	 
-		
-	
-	// }
-
- 
 	  playTree(){
 		  let self = this;
 		 
@@ -358,7 +290,10 @@ class Index extends React.Component {
 		})
 		 reprintNews = reprintNews.slice(0,5)
 		}
- 
+		console.log('!!!>>>>reprintNews',reprintNews)
+
+	 
+		//console.log(this.state.paper_sevenday,'llll')
 		return (
 		   <div className='PageTree'>
 		      <div style={{position:'absolute',width:'100%',height:'100%'}}>
@@ -370,11 +305,12 @@ class Index extends React.Component {
               {/* <TimelineTrend freshRender={this.state.freshRender} bandList={this.state.timelineList} fontSize={this.state.fontSize}/> */}
 			  <PressDistributePie freshRender={this.state.freshRender} pressTypes={this.state.reportlist[0]}/>
 			  <ForwardMediaCount freshRender={this.state.freshRender} lists={this.state.reportlist}/>
-			  <HotRanking rankList={this.state.reprinthottop} />
+			  <HotRanking series={this.state.reprinthottop} />
 			  {
 				  reprintNews && <TreeSpineList freshRender={this.state.freshRender} series={reprintNews}/>
 			  }
-			  <NewsList lists={this.state.reprintlistlatest}/>
+
+			  <NewsList freshRender={this.state.freshRender} lists={this.state.reprintlistlatest}/>
 			 
 			
 
