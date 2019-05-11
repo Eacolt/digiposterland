@@ -269,9 +269,9 @@ class Index extends React.Component{
                    this.state.contentList.map((item,index)=>{
                         return (
                             <li className='lists' key={index}>
-                            <div className='uppon'   dangerouslySetInnerHTML={{__html:item.title}}></div>
-                            <div className='bottom'>{item.source}&nbsp;{item.pubdate}</div>
-                            {/* <div style={{fontSize:'0.2rem'}}><span>{item.source}</span> <span >{item.pubdate}</span></div> */}
+                            <div className='uppon'   >{item.title}></div>
+                            <div className='bottom'  >{item.source}&nbsp;{item.pubdate}</div>
+                   
                         </li>
                         )
                     })

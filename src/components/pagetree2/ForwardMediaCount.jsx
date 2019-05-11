@@ -61,10 +61,7 @@ class ForwardMediaCount extends React.Component{
                         <div className='number'>{item.number}</div>
                         <div className='text'>{item.text}</div>
 
-                      
-
-
-               
+   
                     </div>
                     )
                 })

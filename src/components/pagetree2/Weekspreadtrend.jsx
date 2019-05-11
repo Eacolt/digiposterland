@@ -73,7 +73,7 @@ class Weekspreadtrend extends React.Component{
       
             this.myOption.legend = {
                 data:xAxisData,
-                right:0,
+                right:'9%',
                 top:'13%',
                 textStyle:{
                     color:'#fff'

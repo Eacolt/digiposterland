@@ -9,6 +9,8 @@ class NewsList extends React.Component{
     }
     componentDidMount(){
         let  self = this;
+
+        
        
      
     }
@@ -62,9 +64,9 @@ class NewsList extends React.Component{
                            <div className='pic'>
                                <img src={require(`../../img/${pic}`)} width='100%' height='auto'/>
                            </div>
-                           <div>
-                           <div className='title'>{item.title}</div>
-                            <div className='content'>{item.pubtime} {item.source}</div>
+                           <div >
+                             <div className='title'>{item.title}</div>
+                             <div className='content' style={{color:'#02baf2'}}>{item.pubtime} {item.source}</div>
                            </div>
                            
                         </div>

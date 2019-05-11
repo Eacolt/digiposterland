@@ -113,7 +113,7 @@ class UserAnalyTrendLine extends React.Component{
                     }
                 },
                 legend:{
-                    right:'5%',
+                    right:'8%',
                     
                     textStyle:{
                         color:'#fff'

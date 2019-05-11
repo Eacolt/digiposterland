@@ -7,7 +7,7 @@ class PressCountRatioPie extends React.Component{
        super(props)
    }
    componentWillReceiveProps(nextprops){
-       console.log('互砸啊啊啊啊',nextprops)
+       
  
    }
    componentWillUpdate(nextprops){
@@ -107,6 +107,7 @@ class PressCountRatioPie extends React.Component{
             textStyle:{
                 color:'#fff'
             },
+            itemGap:12,
             data:seriesLegend
         },
            

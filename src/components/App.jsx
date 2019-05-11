@@ -1,5 +1,5 @@
 import './App.less'
-// import Page1 from './page1'
+ import baseUrl from '../utils.js'
 import Page2 from './page2/index.jsx'
 // import PageTree from './pagetree/index.jsx'
 import PageTree2 from './pagetree2/index.jsx'
@@ -36,17 +36,13 @@ class App extends React.Component {
 
 	}
 	render() {
-		console.log('更舞台更新')
+		console.log('更舞台更新',baseUrl)
 		return (
-			// <div style={{display:'flex',flexWrap:'wrap',justifyContent:'start',alignItems:'center'}}>
-			// 	{/* <Page1/> */}
-			// 	<Page2/>
-			// </div>
-		 
+	 
             <div style={{fontSize:'0.5rem'}}>
 					{/* <Page2/> */}
-				 {/* <PageTree2/> */}
-				 <PageMap/>
+				 <PageTree2/>
+				 {/* <PageMap/> */}
 			</div>
 
 		 

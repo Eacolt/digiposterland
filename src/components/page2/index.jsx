@@ -10,10 +10,6 @@ import ContentAnalyTrendLine from './ContentAnalyTrendLine.jsx';
 import PressCountRatioPie from './PressCountRatioPie.jsx';
 import OneWeekSpreadTrendLine from './OneWeekSpreadTrendLine.jsx';
 //长沙县概览;
-
-
-
-
 /**
  * 
  * 
@@ -65,17 +61,50 @@ class Index extends React.Component {
 		}
 		 
 	}
+	initPixi(){
+		const self  = this;
+			/////
+			const PixiLoaderBase = new PIXI.loaders.Loader();
+			let pixiBase = new PIXI.Application({
+				width:1920,
+				height:1080,
+				transparent:true
+			});
+			pixiBase.view.style.cssText = 'width:100%;height:100%;position:relative;';
+			this.refs.lightAnime.appendChild(pixiBase.view);
+			PixiLoaderBase.add([
+				{
+					"name":"bganime_an",
+					"url":"./spine/background/skeleton.json"
+	
+				}
+			])
+			.load((loader, resources) => {
+				console.log(resources,'rrr')
+			   let myspine = new PIXI.spine.Spine(resources.bganime_an.spineData)
+			   pixiBase.stage.addChild(myspine);
+			   console.log(myspine,'myspppp')
+	
+	 
+	
+				myspine.x = 1920/2;
+				myspine.y = 1080/2+50;
+				myspine.state.setAnimation(0,'animation',true);
+	
+	
+			   
+	
+			});
+			
+	
+			//////////////
+	
+	}
  
-
 	componentDidMount() {
 		let self = this;
 		var settimer;
 		var throttles = true;
-		
- 
- 
- 
-		
 		this.reg_pro().then(({
 			kpiData,
 			oneweek,
@@ -99,6 +128,7 @@ class Index extends React.Component {
 			var setters
 
 			console.log('sesse',self.state)
+			this.initPixi();
 
 
 			// window.addEventListener('resize',function(){
@@ -118,8 +148,7 @@ class Index extends React.Component {
 			// })
 			// self.setState({})
  
-			console.log('this.state.paper_sevenday.timestamp',this.state.paper_sevenday.timestamp)
-
+ 
 		})
 	 
 		setInterval(()=>{
@@ -138,6 +167,13 @@ class Index extends React.Component {
 		console.log(this.state.paper_sevenday,'llll')
 		return (
 		   <div className='Page2'>
+
+			<div style={{position:'absolute',width:'100%',height:'100%'}}>
+						<img src={require('../../img/dataview.png')} width='100%' height='100%'/>
+			</div>
+		    <div ref='lightAnime' className='pixicanvas'></div>
+
+
 			
 			   {/* 左上角KPI */}
 			   <UserCounts kpiDataList={kpiDatalist}/>
@@ -152,7 +188,7 @@ class Index extends React.Component {
 
 			   <PressCountRatioPie freshRender={this.state.freshRender} pressTypes={this.state.papercount_ratio.pressTypes}/>
 			  <OneWeekSpreadTrendLine freshRender={this.state.freshRender} timestamp={this.state.oneweek.timestamp} series={this.state.oneweek.series} />
-			  <Title text='长沙县数据概览'/>
+		 
 		   </div>
  
 		)

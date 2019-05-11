@@ -1,5 +1,6 @@
 
 import 'pixi-spine'
+import * as baseUrl from './utils.js'
 import App from './components/App.jsx'
 import autoScreen from './components/util/autoScreen'
 

@@ -50,6 +50,7 @@ class PressDistributePie extends React.Component{
                 }
             })
             this.myOption.legend.data = legendNames;
+            this.myOption.legend.itemGap = 12;
             this.myOption.series.data = pressTypes;
              
 

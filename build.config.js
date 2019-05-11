@@ -33,6 +33,11 @@ module.exports = {
 				removeComments: true
 			}
 		}),
+		new webpack.DefinePlugin({
+            PRODUCTION: JSON.stringify(true),
+            DEVELEPMENT: JSON.stringify(false),
+        
+          }),
 		new webpack.ProvidePlugin({
 			React: 'react',
 			ReactDOM: 'react-dom',
@@ -51,6 +56,10 @@ module.exports = {
 			{
 				from:__dirname+'/src/spine',
 				to:__dirname+'/dist/spine'
+			},
+			{
+				from:__dirname+'/src/img',
+				to:__dirname+'/dist/img'
 			}
 		]),
 		new MiniCssExtractPlugin({

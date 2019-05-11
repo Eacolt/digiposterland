@@ -99,6 +99,7 @@ class OriginPressCountPie extends React.Component{
             textStyle:{
                 color:'#fff'
             },
+            itemGap:12,
             data:seriesLegend
         },
            
@@ -107,7 +108,7 @@ class OriginPressCountPie extends React.Component{
                    name:'访问来源',
                    type:'pie',
                    radius : ['15%','50%'],
-                   center: ['34%', '50%'],
+                   center: ['33.8%', '50%'],
                    data:seriresData.sort(function (a, b) { return a.value - b.value; }),
                     // roseType:'radius',
                    label: false,

@@ -5,7 +5,7 @@
   "main": "./src/index.js",
   "scripts": {
     "build": "webpack --config build.config.js",
-    "serve": "webpack-dev-server --config prod.config.js"
+    "serve": "webpack-dev-server --config dev.config.js"
   },
   "keywords": [],
   "author": "dreamcolt",

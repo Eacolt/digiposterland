@@ -36,12 +36,17 @@ module.exports = {
 			}
 
 		}),
+		new webpack.DefinePlugin({
+            DEVELEPMENT: JSON.stringify(true),
+            PRODUCTION: JSON.stringify(false),
+        }),
 		new webpack.ProvidePlugin({
 			React: 'react',
 			ReactDOM: 'react-dom',
 			PropTypes:'prop-types',
 			Axios:'axios',
 			PIXI:'pixi.js',
+	 
 		 
 	 
 			Echarts:'echarts',
