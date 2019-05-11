@@ -73,7 +73,7 @@ class PressDistributePie extends React.Component{
    
    
             this.myChart.setOption(this.myOption)
-            console.log('DOOOO')
+           
         }
     }
     componentDidMount(){
@@ -128,7 +128,7 @@ class PressDistributePie extends React.Component{
                     itemStyle: {
                      
                             color:function(data){
-                                console.log(data)
+                           
                                 return '#C1232B'
                             },
                       

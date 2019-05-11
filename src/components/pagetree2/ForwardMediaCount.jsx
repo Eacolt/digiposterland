@@ -38,7 +38,7 @@ class ForwardMediaCount extends React.Component{
             this.setState({
                 itemList:arrState
             })
-            console.log('nextis',nextProps.lists);
+  
             this.times++;
         }
      
